@@ -1,0 +1,1146 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>EL KANDAOUI AUTO KIT – Pièces Automobiles Maroc</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Bebas+Neue&display=swap" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+<style>
+:root{
+  --orange:#FF8C00;--orange2:#FFA333;--orange-dark:#E67A00;
+  --black:#111111;--grey:#F4F5F6;
+  --border:#E2E4E7;--text:#111111;--text2:#444444;--text3:#888888;
+  --white:#FFFFFF;--green:#27AE60;--wa:#25D366;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;background:var(--white);color:var(--text);overflow-x:hidden;font-size:14px}
+.page{display:none;animation:fadeIn .25s ease}
+.page.active{display:block}
+@keyframes fadeIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+
+/* TOPBAR */
+.topbar{background:var(--black);font-size:11px;font-weight:500}
+.topbar-inner{max-width:1400px;margin:0 auto;padding:7px 16px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:5px}
+.topbar-left{display:flex;align-items:center;gap:14px;color:rgba(255,255,255,.6);flex-wrap:wrap}
+.topbar-left span{display:flex;align-items:center;gap:4px}
+.topbar-left i{color:var(--orange)}
+.topbar-right{display:flex;gap:12px}
+.topbar a{color:rgba(255,255,255,.6);text-decoration:none;display:flex;align-items:center;gap:4px;transition:color .2s}
+.topbar a i{color:var(--orange)}
+.topbar a:hover{color:var(--orange2)}
+
+/* HEADER */
+.main-header{background:var(--white);border-bottom:2px solid var(--border);position:sticky;top:0;z-index:900;box-shadow:0 2px 12px rgba(0,0,0,.07)}
+.header-top{max-width:1400px;margin:0 auto;padding:10px 16px;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.logo-wrap{display:flex;align-items:center;flex-shrink:0;cursor:pointer}
+.logo-text{font-family:'Bebas Neue',sans-serif;font-size:22px;color:var(--black);letter-spacing:.04em;line-height:1}
+.logo-text span{color:var(--orange)}
+.logo-sub{font-size:9px;color:var(--text3);letter-spacing:.15em;text-transform:uppercase;margin-top:1px}
+.header-search{flex:1;min-width:220px;max-width:540px;margin:0 auto}
+.sv{background:var(--grey);border:2px solid var(--border);border-radius:10px;padding:9px 14px;display:flex;align-items:center;gap:8px;transition:border-color .2s}
+.sv:focus-within{border-color:var(--orange);background:var(--white);box-shadow:0 0 0 3px rgba(255,140,0,.1)}
+.sv i{color:var(--text3);font-size:14px}
+.sv input{background:none;border:none;outline:none;font-family:'Inter',sans-serif;font-size:13px;color:var(--text);width:100%}
+.sv input::placeholder{color:var(--text3)}
+.sv-clear{background:none;border:none;color:var(--text3);cursor:pointer;font-size:14px;padding:0;display:none}
+.sv-clear.show{display:block}
+.sv-clear:hover{color:var(--orange)}
+.header-actions{display:flex;align-items:center;gap:8px;margin-left:auto}
+.wa-btn{background:var(--wa);color:#fff;border:none;border-radius:9px;padding:9px 14px;font-size:12px;font-weight:700;cursor:pointer;display:flex;align-items:center;gap:5px;white-space:nowrap;text-decoration:none;transition:background .2s}
+.wa-btn:hover{background:#1db954}
+.cart-action{position:relative;background:var(--black);color:#fff;border:none;border-radius:9px;padding:9px 14px;font-size:12px;font-weight:700;cursor:pointer;display:flex;align-items:center;gap:5px;transition:background .2s}
+.cart-action:hover{background:#333}
+.badge{position:absolute;top:-6px;right:-6px;background:var(--orange);color:#fff;font-size:10px;font-weight:800;width:18px;height:18px;border-radius:50%;display:flex;align-items:center;justify-content:center;opacity:0;transform:scale(0);transition:all .3s}
+.badge.show{opacity:1;transform:scale(1)}
+.cart-total{font-size:10px;font-weight:700;color:var(--orange2)}
+
+/* NAV */
+.nav-bar{background:var(--black);border-bottom:3px solid var(--orange);overflow-x:auto;-webkit-overflow-scrolling:touch}
+.nav-inner{max-width:1400px;margin:0 auto;padding:0 16px;display:flex;align-items:center;min-width:max-content}
+.nav-link{color:rgba(255,255,255,.7);font-size:11px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;padding:12px 14px;display:flex;align-items:center;gap:5px;transition:all .2s;border-bottom:3px solid transparent;margin-bottom:-3px;cursor:pointer;border-top:none;border-left:none;border-right:none;background:none;font-family:'Inter',sans-serif;white-space:nowrap}
+.nav-link:hover,.nav-link.active{color:var(--orange2);border-bottom-color:var(--orange)}
+.nav-promo{margin-left:auto;background:var(--orange);color:#fff;font-size:10px;font-weight:800;letter-spacing:.05em;text-transform:uppercase;padding:6px 12px;border-radius:6px;cursor:pointer;border:none;transition:background .2s;white-space:nowrap;font-family:'Inter',sans-serif}
+.nav-promo:hover{background:var(--orange2)}
+
+/* HERO */
+.hero{background:linear-gradient(135deg,#FAF8F4 0%,#F5F1EB 60%,#FAF8F4 100%);position:relative;overflow:hidden;border-bottom:2px solid #EDE8DE}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 55% 80% at 75% 50%,rgba(255,140,0,.08),transparent 65%)}
+.hgrid{position:absolute;inset:0;background-image:linear-gradient(rgba(0,0,0,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(0,0,0,.03) 1px,transparent 1px);background-size:44px 44px}
+.hero-inner{max-width:1400px;margin:0 auto;padding:40px 16px;display:grid;grid-template-columns:1fr;gap:28px;position:relative;z-index:2}
+@media(min-width:800px){.hero-inner{grid-template-columns:1fr 360px;padding:56px 24px;gap:48px;align-items:center}}
+.hero-badge{display:inline-flex;align-items:center;gap:7px;background:rgba(255,140,0,.12);border:1px solid rgba(255,140,0,.3);border-radius:20px;padding:5px 13px;font-size:10px;font-weight:700;letter-spacing:.1em;color:var(--orange-dark);text-transform:uppercase;margin-bottom:14px}
+.hero h1{font-family:'Bebas Neue',sans-serif;font-size:clamp(36px,7vw,68px);color:var(--black);line-height:.94;letter-spacing:.04em;margin-bottom:14px}
+.hero h1 em{color:var(--orange);font-style:normal}
+.hero-sub{font-size:13.5px;color:var(--text2);line-height:1.75;max-width:420px;margin-bottom:22px}
+.hero-acts{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:28px}
+.btn-orange{background:var(--orange);color:#fff;border:none;border-radius:9px;padding:12px 22px;font-size:12px;font-weight:800;letter-spacing:.05em;cursor:pointer;display:inline-flex;align-items:center;gap:7px;text-decoration:none;transition:all .25s;text-transform:uppercase;box-shadow:0 4px 18px rgba(255,140,0,.3);font-family:'Inter',sans-serif}
+.btn-orange:hover{background:var(--orange-dark);transform:translateY(-2px)}
+.btn-outline{background:transparent;color:var(--black);border:1.5px solid rgba(0,0,0,.22);border-radius:9px;padding:12px 22px;font-size:12px;font-weight:700;cursor:pointer;display:inline-flex;align-items:center;gap:7px;text-decoration:none;transition:all .25s;text-transform:uppercase}
+.btn-outline:hover{border-color:var(--orange);color:var(--orange)}
+.kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(0,0,0,.1);border-radius:12px;overflow:hidden}
+.kpi{background:rgba(0,0,0,.04);padding:15px;text-align:center}
+.kpi .val{font-family:'Bebas Neue',sans-serif;font-size:28px;color:var(--orange);letter-spacing:.06em}
+.kpi .lbl{font-size:9.5px;color:var(--text3);letter-spacing:.12em;text-transform:uppercase;margin-top:2px}
+.sw{background:var(--black);border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:22px}
+.sw h3{font-size:14px;font-weight:800;color:#fff;margin-bottom:4px;display:flex;align-items:center;gap:7px}
+.sw h3 i{color:var(--orange)}
+.sw p{font-size:11px;color:rgba(255,255,255,.4);margin-bottom:16px}
+.sw-row{margin-bottom:9px}
+.sw-row label{display:block;font-size:9.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:4px}
+.sw-row select,.sw-row input{width:100%;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:8px;padding:9px 11px;color:#fff;font-family:'Inter',sans-serif;font-size:12px;outline:none;transition:border-color .2s}
+.sw-row select:focus,.sw-row input:focus{border-color:var(--orange)}
+.sw-row select option{background:#222;color:#fff}
+.sw-btn{width:100%;background:var(--orange);color:#fff;border:none;border-radius:8px;padding:11px;font-size:13px;font-weight:800;cursor:pointer;letter-spacing:.05em;text-transform:uppercase;display:flex;align-items:center;justify-content:center;gap:7px;transition:background .25s;margin-top:4px;font-family:'Inter',sans-serif}
+.sw-btn:hover{background:var(--orange-dark)}
+
+/* RIBBON */
+.ribbon{background:var(--orange);overflow:hidden;padding:8px 0}
+.rib-inner{display:flex;gap:44px;animation:scrollx 22s linear infinite;white-space:nowrap}
+@keyframes scrollx{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.rib-item{display:flex;align-items:center;gap:7px;font-size:11px;font-weight:800;letter-spacing:.08em;color:#fff;text-transform:uppercase}
+
+/* TRUST */
+.trust-band{background:var(--grey);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:16px}
+.trust-inner{max-width:1400px;margin:0 auto;display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+@media(min-width:768px){.trust-inner{grid-template-columns:repeat(4,1fr)}}
+.ti{display:flex;align-items:center;gap:11px}
+.ti-icon{width:38px;height:38px;border-radius:9px;background:var(--black);display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0;color:var(--orange)}
+.ti-title{font-size:12px;font-weight:700;color:var(--text);margin-bottom:1px}
+.ti-desc{font-size:10.5px;color:var(--text3);line-height:1.4}
+
+/* CATALOGUE */
+.catalogue-section{max-width:1400px;margin:0 auto;padding:20px 16px}
+.catalogue-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;flex-wrap:wrap;gap:10px}
+.catalogue-header h2{font-family:'Bebas Neue',sans-serif;font-size:26px;color:var(--black);letter-spacing:.04em}
+.catalogue-header h2 span{color:var(--orange)}
+.filter-row{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:14px;align-items:center}
+.pill{background:var(--grey);border:1px solid var(--border);border-radius:20px;padding:6px 13px;font-size:11px;font-weight:600;cursor:pointer;transition:all .2s;white-space:nowrap;user-select:none}
+.pill:hover{border-color:var(--orange);color:var(--orange)}
+.pill.active{background:var(--black);border-color:var(--black);color:#fff}
+.search-info{background:rgba(255,140,0,.08);border:1px solid rgba(255,140,0,.25);border-radius:8px;padding:10px 14px;margin-bottom:14px;display:none;align-items:center;justify-content:space-between;gap:8px;font-size:12px;color:var(--text2)}
+.search-info.show{display:flex}
+.search-info strong{color:var(--orange)}
+.search-info button{background:none;border:none;color:var(--text3);cursor:pointer;font-size:12px;padding:2px 6px;border-radius:4px;transition:color .2s}
+.search-info button:hover{color:var(--orange)}
+.toolbar{display:flex;align-items:center;gap:8px;margin-bottom:14px;flex-wrap:wrap}
+.rc{font-size:12px;color:var(--text3)}
+.rc strong{color:var(--text);font-weight:700}
+
+/* GRILLE */
+.pgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+@media(min-width:640px){.pgrid{grid-template-columns:repeat(3,1fr)}}
+@media(min-width:900px){.pgrid{grid-template-columns:repeat(4,1fr)}}
+@media(min-width:1200px){.pgrid{grid-template-columns:repeat(5,1fr)}}
+
+/* CARTE PRODUIT */
+.pc{background:var(--white);border:1px solid var(--border);border-radius:12px;overflow:hidden;transition:all .22s;display:flex;flex-direction:column}
+.pc:hover{border-color:var(--orange);box-shadow:0 6px 22px rgba(255,140,0,.13);transform:translateY(-3px)}
+
+/* ZONE IMAGE AVEC CAROUSEL */
+.pc-img-box{background:#f0f0f0;height:170px;position:relative;border-bottom:1px solid var(--border);overflow:hidden;display:flex;align-items:center;justify-content:center}
+.pc-slides{width:100%;height:100%;display:flex;transition:transform .35s cubic-bezier(.4,0,.2,1)}
+.pc-slide{min-width:100%;height:100%;flex-shrink:0;display:flex;align-items:center;justify-content:center;background:#f0f0f0}
+.pc-slide img{width:100%;height:100%;object-fit:cover}
+.pc-img-placeholder{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;color:var(--text3);width:100%;height:100%}
+.pc-img-placeholder .ico{font-size:38px;opacity:.35}
+.pc-img-placeholder .lbl{font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;opacity:.45}
+
+/* Flèches carousel */
+.pc-prev,.pc-next{position:absolute;top:50%;transform:translateY(-50%);background:rgba(0,0,0,.55);color:#fff;border:none;border-radius:50%;width:26px;height:26px;font-size:11px;cursor:pointer;display:none;align-items:center;justify-content:center;z-index:4;transition:background .2s}
+.pc-prev{left:5px}
+.pc-next{right:5px}
+.pc:hover .pc-prev,.pc:hover .pc-next{display:flex}
+.pc-prev:hover,.pc-next:hover{background:var(--orange)}
+.pc-prev:disabled,.pc-next:disabled{opacity:.3;cursor:not-allowed}
+
+/* Dots indicateurs */
+.pc-dots{position:absolute;bottom:5px;left:50%;transform:translateX(-50%);display:flex;gap:4px;z-index:4}
+.pc-dot{width:5px;height:5px;border-radius:50%;background:rgba(255,255,255,.5);border:none;padding:0;cursor:pointer;transition:background .2s}
+.pc-dot.active{background:#fff}
+
+/* Badge état + bouton WA */
+.pc-badge-wrap{position:absolute;top:7px;left:7px;display:flex;flex-direction:column;gap:3px;z-index:3}
+.pc-badge{font-size:9px;font-weight:800;letter-spacing:.06em;padding:3px 8px;border-radius:10px;text-transform:uppercase}
+.etat-bon{background:#E8F5E9;color:#2e7d32}
+.etat-rep{background:#FFF8E1;color:#f57f17}
+.etat-non{background:#FFEBEE;color:#c62828}
+.pc-wa-btn{position:absolute;bottom:7px;right:7px;background:var(--wa);color:#fff;border:none;border-radius:7px;width:28px;height:28px;display:flex;align-items:center;justify-content:center;font-size:13px;cursor:pointer;opacity:0;transition:opacity .2s;z-index:3}
+.pc:hover .pc-wa-btn{opacity:1}
+
+/* Compteur photos */
+.pc-photo-count{position:absolute;top:7px;right:7px;background:rgba(0,0,0,.6);color:#fff;font-size:9px;font-weight:700;padding:2px 7px;border-radius:10px;z-index:3;display:none}
+.pc-photo-count.show{display:block}
+
+.pc-body{padding:11px;flex:1;display:flex;flex-direction:column;gap:3px}
+.pc-marque{font-size:9px;font-weight:700;letter-spacing:.14em;color:var(--orange);text-transform:uppercase}
+.pc-nom{font-size:12px;font-weight:700;color:var(--text);line-height:1.3}
+.pc-ref{font-size:10px;color:var(--text3);font-family:monospace}
+.pc-anomalie{font-size:9.5px;color:var(--text3);font-style:italic}
+.pc-footer{display:flex;align-items:center;justify-content:space-between;gap:6px;border-top:1px solid var(--border);padding-top:9px;margin-top:6px}
+.pc-prix{font-family:'Bebas Neue',sans-serif;font-size:20px;color:var(--black);letter-spacing:.03em;line-height:1}
+.pc-prix.prix-demande{font-size:11px;font-family:'Inter',sans-serif;font-weight:700;color:var(--text3)}
+.pc-add{background:var(--black);color:#fff;border:none;border-radius:7px;padding:7px 10px;font-size:10.5px;font-weight:700;cursor:pointer;display:flex;align-items:center;gap:4px;transition:all .2s;white-space:nowrap;font-family:'Inter',sans-serif}
+.pc-add:hover{background:var(--orange)}
+.pc-add.added{background:var(--green)}
+
+/* LIGHTBOX */
+.lightbox{position:fixed;inset:0;background:rgba(0,0,0,.92);z-index:2000;display:none;align-items:center;justify-content:center;flex-direction:column;gap:14px}
+.lightbox.open{display:flex}
+.lb-img{max-width:90vw;max-height:75vh;border-radius:10px;object-fit:contain;box-shadow:0 20px 60px rgba(0,0,0,.6)}
+.lb-close{position:absolute;top:16px;right:16px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);color:#fff;width:38px;height:38px;border-radius:50%;font-size:16px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s}
+.lb-close:hover{background:var(--orange)}
+.lb-nav{display:flex;gap:14px;align-items:center}
+.lb-prev,.lb-next{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);color:#fff;width:44px;height:44px;border-radius:50%;font-size:16px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s}
+.lb-prev:hover,.lb-next:hover{background:var(--orange)}
+.lb-prev:disabled,.lb-next:disabled{opacity:.3;cursor:not-allowed}
+.lb-counter{font-size:12px;color:rgba(255,255,255,.6);min-width:60px;text-align:center}
+.lb-info{font-size:13px;font-weight:700;color:#fff;text-align:center}
+.lb-ref{font-size:11px;color:rgba(255,255,255,.5);text-align:center;font-family:monospace}
+.lb-dots{display:flex;gap:6px;justify-content:center;flex-wrap:wrap}
+.lb-dot{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.3);border:none;cursor:pointer;transition:background .2s;padding:0}
+.lb-dot.active{background:var(--orange)}
+
+/* ÉTATS VIDES */
+.empty-state{grid-column:1/-1;text-align:center;padding:60px 20px;color:var(--text3)}
+.empty-state i{font-size:40px;display:block;margin-bottom:14px;opacity:.3}
+.empty-state p{font-size:14px;font-weight:600;color:var(--text2);margin-bottom:6px}
+.empty-state small{font-size:12px}
+
+/* PAGINATION */
+.pagination{display:flex;align-items:center;justify-content:center;gap:6px;margin-top:24px;flex-wrap:wrap;padding-bottom:10px}
+.pag-btn{background:var(--grey);border:1px solid var(--border);border-radius:7px;padding:7px 13px;font-size:12px;font-weight:600;cursor:pointer;transition:all .2s;color:var(--text);min-width:36px;font-family:'Inter',sans-serif}
+.pag-btn:hover:not(:disabled){border-color:var(--orange);color:var(--orange)}
+.pag-btn.active{background:var(--black);border-color:var(--black);color:#fff}
+.pag-btn:disabled{opacity:.35;cursor:not-allowed}
+.pag-info{font-size:11px;color:var(--text3);padding:0 6px}
+.pag-dots{font-size:12px;color:var(--text3);padding:0 3px}
+
+/* PAGES INTÉRIEURES */
+.page-hero{background:linear-gradient(135deg,#FAF8F4 0%,#F5F1EB 100%);border-bottom:2px solid #EDE8DE;padding:40px 16px;text-align:center}
+.page-hero h1{font-family:'Bebas Neue',sans-serif;font-size:clamp(34px,6vw,60px);color:var(--black);letter-spacing:.04em;margin-bottom:10px}
+.page-hero h1 span{color:var(--orange)}
+.page-hero p{font-size:13.5px;color:var(--text2);max-width:500px;margin:0 auto}
+.cmd-body{max-width:1100px;margin:0 auto;padding:32px 16px;display:grid;grid-template-columns:1fr;gap:32px}
+@media(min-width:768px){.cmd-body{grid-template-columns:1fr 1fr}}
+.cmd-quick{display:flex;flex-direction:column;gap:10px;margin-bottom:24px}
+.cq-card{display:flex;align-items:center;gap:13px;background:var(--white);border:1.5px solid var(--border);border-radius:12px;padding:15px 16px;cursor:pointer;text-decoration:none;transition:all .22s}
+.cq-card:hover{border-color:var(--orange);box-shadow:0 4px 18px rgba(255,140,0,.12);transform:translateY(-2px)}
+.cq-icon{width:42px;height:42px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:19px;flex-shrink:0}
+.cq-icon.wa{background:#25D366;color:#fff}
+.cq-icon.sms{background:var(--black);color:var(--orange)}
+.cq-icon.phone{background:var(--orange);color:#fff}
+.cq-info .cq-title{font-size:13px;font-weight:700;color:var(--text);margin-bottom:1px}
+.cq-info .cq-sub{font-size:11px;color:var(--text3)}
+.cq-arrow{margin-left:auto;color:var(--text3);font-size:12px}
+.contact-blocks{display:flex;flex-direction:column;gap:14px}
+.cb{display:flex;gap:11px;align-items:flex-start}
+.cb-icon{width:38px;height:38px;border-radius:9px;background:var(--black);display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0;color:var(--orange)}
+.cb-lbl{font-size:9.5px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:var(--text3);margin-bottom:2px}
+.cb-val{font-size:14px;font-weight:700;color:var(--text)}
+.cb-val a{color:var(--text);text-decoration:none}
+.cb-val a:hover{color:var(--orange)}
+.order-form-box{background:var(--white);border:1px solid var(--border);border-radius:16px;padding:26px;box-shadow:0 5px 24px rgba(0,0,0,.06)}
+.order-form-box h3{font-family:'Bebas Neue',sans-serif;font-size:23px;letter-spacing:.06em;color:var(--black);margin-bottom:18px}
+.order-form-box h3 span{color:var(--orange)}
+.fg{margin-bottom:12px}
+.fg label{display:block;font-size:9.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--text3);margin-bottom:4px}
+.fg input,.fg select,.fg textarea{width:100%;background:var(--grey);border:1px solid var(--border);border-radius:8px;padding:9px 12px;font-family:'Inter',sans-serif;font-size:12px;color:var(--text);outline:none;transition:border-color .2s}
+.fg input:focus,.fg select:focus,.fg textarea:focus{border-color:var(--orange);background:#fff}
+.fg textarea{resize:vertical;min-height:80px}
+.fg-row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+@media(max-width:480px){.fg-row{grid-template-columns:1fr}}
+.bwa{background:var(--wa);color:#fff;border:none;border-radius:8px;padding:12px;font-size:12px;font-weight:800;letter-spacing:.05em;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:7px;text-transform:uppercase;transition:background .22s;width:100%;margin-bottom:7px;font-family:'Inter',sans-serif}
+.bwa:hover{background:#1db954}
+.bsms{background:var(--black);color:#fff;border:none;border-radius:8px;padding:12px;font-size:12px;font-weight:800;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:7px;text-transform:uppercase;transition:all .22s;width:100%;font-family:'Inter',sans-serif}
+.bsms:hover{background:#333;color:var(--orange)}
+.contact-body{max-width:1100px;margin:0 auto;padding:32px 16px;display:grid;grid-template-columns:1fr;gap:32px}
+@media(min-width:768px){.contact-body{grid-template-columns:1fr 1fr}}
+.contact-map{background:var(--grey);border-radius:12px;border:1px solid var(--border);height:220px;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:10px;margin-bottom:18px}
+.contact-map i{font-size:34px;color:var(--orange)}
+.contact-map p{font-size:12px;color:var(--text3);text-align:center;line-height:1.6}
+.faq-item{border:1px solid var(--border);border-radius:10px;margin-bottom:7px;overflow:hidden}
+.faq-q{padding:13px 16px;font-size:13px;font-weight:700;cursor:pointer;display:flex;justify-content:space-between;align-items:center;background:#fff;transition:background .2s;user-select:none}
+.faq-q:hover{background:var(--grey)}
+.faq-q i{color:var(--orange);transition:transform .3s;font-size:11px;flex-shrink:0}
+.faq-q.open i{transform:rotate(180deg)}
+.faq-a{display:none;padding:13px 16px;font-size:12.5px;color:var(--text2);line-height:1.7;border-top:1px solid var(--border)}
+.faq-a.open{display:block}
+.back-btn{display:inline-flex;align-items:center;gap:6px;background:var(--grey);border:1px solid var(--border);border-radius:7px;padding:7px 13px;font-size:11px;font-weight:700;cursor:pointer;color:var(--text);text-decoration:none;transition:all .2s;margin-bottom:18px;text-transform:uppercase;letter-spacing:.04em;outline:none;font-family:'Inter',sans-serif}
+.back-btn:hover{border-color:var(--orange);color:var(--orange)}
+
+/* FOOTER */
+footer{background:var(--black);margin-top:48px}
+.ft-top{max-width:1400px;margin:0 auto;padding:36px 16px 26px;display:grid;grid-template-columns:1fr 1fr;gap:28px;border-bottom:1px solid rgba(255,255,255,.08)}
+@media(min-width:768px){.ft-top{grid-template-columns:2fr 1fr 1fr 1fr}}
+.ft-brand p{font-size:11.5px;line-height:1.8;color:rgba(255,255,255,.4);max-width:230px;margin-bottom:14px}
+.ft-logo{font-family:'Bebas Neue',sans-serif;font-size:22px;color:#fff;letter-spacing:.04em;margin-bottom:10px;display:block}
+.ft-logo span{color:var(--orange)}
+.ft-social{display:flex;gap:6px;margin-top:14px}
+.fsl{width:32px;height:32px;border-radius:7px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.5);font-size:13px;text-decoration:none;transition:all .2s}
+.fsl:hover{color:var(--orange);border-color:rgba(255,140,0,.4)}
+.ft-col h4{font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--orange);font-weight:700;margin-bottom:12px}
+.ft-col ul{list-style:none}
+.ft-col li{margin-bottom:7px}
+.ft-col a{font-size:11.5px;color:rgba(255,255,255,.45);text-decoration:none;transition:color .2s;cursor:pointer}
+.ft-col a:hover{color:var(--orange2)}
+.ft-bot{max-width:1400px;margin:0 auto;padding:14px 16px;display:flex;justify-content:space-between;align-items:center;font-size:11px;color:rgba(255,255,255,.25);flex-wrap:wrap;gap:6px}
+
+/* PANIER */
+.cart-overlay{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:1000;opacity:0;pointer-events:none;transition:opacity .3s;backdrop-filter:blur(3px)}
+.cart-overlay.open{opacity:1;pointer-events:all}
+.cart-panel{position:fixed;top:0;right:-100%;bottom:0;width:100%;max-width:440px;background:#fff;border-left:1px solid var(--border);z-index:1001;transition:right .4s cubic-bezier(.22,1,.36,1);display:flex;flex-direction:column;box-shadow:-10px 0 36px rgba(0,0,0,.1)}
+.cart-panel.open{right:0}
+.cp-hd{background:var(--black);padding:16px 18px;display:flex;align-items:center;justify-content:space-between;flex-shrink:0}
+.cp-hd h2{font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:.07em;color:#fff}
+.cp-hd h2 span{color:var(--orange)}
+.cp-cls{width:30px;height:30px;border-radius:6px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);color:rgba(255,255,255,.6);font-size:12px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:color .2s}
+.cp-cls:hover{color:var(--orange)}
+.cp-items{flex:1;overflow-y:auto;padding:14px 16px;background:var(--grey)}
+.cp-empty{text-align:center;padding:44px 16px;color:var(--text3)}
+.cp-empty i{font-size:36px;display:block;margin-bottom:12px;opacity:.35}
+.cp-empty p{font-weight:600;color:var(--text2);margin-bottom:4px;font-size:13px}
+.cp-item{display:flex;gap:9px;align-items:flex-start;background:#fff;border-radius:9px;padding:10px;margin-bottom:7px;border:1px solid var(--border);animation:si .25s ease}
+@keyframes si{from{opacity:0;transform:translateX(16px)}to{opacity:1;transform:none}}
+.cp-ico{width:42px;height:42px;border-radius:7px;background:var(--grey);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;border:1px solid var(--border);overflow:hidden}
+.cp-ico img{width:100%;height:100%;object-fit:cover}
+.cp-name{font-size:11.5px;font-weight:700;color:var(--text);margin-bottom:1px}
+.cp-ref{font-size:9.5px;color:var(--text3);font-family:monospace;margin-bottom:5px}
+.cp-ctrl{display:flex;align-items:center;gap:5px}
+.qb{width:22px;height:22px;border-radius:5px;background:var(--grey);border:1px solid var(--border);color:var(--text);font-size:10px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s;font-family:'Inter',sans-serif}
+.qb:hover{border-color:var(--orange);color:var(--orange)}
+.qn{font-size:12px;font-weight:700;min-width:16px;text-align:center}
+.cdel{background:none;border:none;color:var(--text3);cursor:pointer;font-size:12px;margin-left:3px;padding:2px;transition:color .2s}
+.cdel:hover{color:#E53935}
+.cp-ft{padding:14px 16px;border-top:1px solid var(--border);flex-shrink:0;background:#fff}
+.srow{display:flex;justify-content:space-between;padding:4px 0;font-size:11.5px;color:var(--text3)}
+.trow{display:flex;justify-content:space-between;border-top:1px solid var(--border);margin-top:6px;padding-top:10px;font-size:14px;font-weight:700;color:var(--text)}
+.tprice{font-family:'Bebas Neue',sans-serif;font-size:24px;color:var(--orange);letter-spacing:.04em}
+.cbtns{display:flex;flex-direction:column;gap:7px;margin-top:12px}
+
+/* TOAST + SCROLL */
+.toast{position:fixed;bottom:18px;left:50%;transform:translateX(-50%) translateY(60px);background:var(--black);border:1px solid rgba(255,140,0,.35);border-radius:10px;padding:10px 18px;font-size:12px;font-weight:600;color:#fff;display:flex;align-items:center;gap:7px;z-index:3000;opacity:0;transition:all .35s cubic-bezier(.22,1,.36,1);box-shadow:0 8px 28px rgba(0,0,0,.3);white-space:nowrap;max-width:90vw}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+.toast i{color:var(--orange)}
+.scroll-top{position:fixed;bottom:18px;right:14px;width:38px;height:38px;border-radius:8px;background:var(--black);color:var(--orange);border:1px solid rgba(255,140,0,.3);font-size:14px;cursor:pointer;z-index:500;display:flex;align-items:center;justify-content:center;opacity:0;transform:translateY(16px);transition:all .3s;pointer-events:none}
+.scroll-top.show{opacity:1;transform:translateY(0);pointer-events:all}
+.scroll-top:hover{background:var(--orange);color:#fff}
+
+@media(max-width:640px){
+  .topbar-left span:last-child{display:none}
+  .header-top{gap:8px}
+  .logo-text{font-size:18px}
+  .wa-btn .txt{display:none}
+}
+</style>
+</head>
+<body>
+
+<!-- TOPBAR -->
+<div class="topbar">
+  <div class="topbar-inner">
+    <div class="topbar-left">
+      <span><i class="fas fa-truck"></i> Livraison 24-48H Maroc</span>
+      <span><i class="fas fa-shield-alt"></i> Pièces garanties</span>
+      <span><i class="fas fa-undo"></i> Retours 7 jours</span>
+    </div>
+    <div class="topbar-right">
+      <a href="tel:0660471759"><i class="fas fa-phone"></i> 06 60 47 17 59</a>
+      <a href="https://wa.me/212660471759" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+    </div>
+  </div>
+</div>
+
+<!-- HEADER -->
+<header class="main-header">
+  <div class="header-top">
+    <div class="logo-wrap" onclick="showPage('home')">
+      <div>
+        <div class="logo-text">EL KANDAOUI <span>AUTO KIT</span></div>
+        <div class="logo-sub">Pièces Automobiles · Maroc</div>
+      </div>
+    </div>
+    <div class="header-search">
+      <div class="sv">
+        <i class="fas fa-search"></i>
+        <input type="text" id="searchInput" placeholder="Marque, modèle, référence, pièce..." autocomplete="off">
+        <button class="sv-clear" id="clearBtn" onclick="clearSearch()" title="Effacer"><i class="fas fa-times"></i></button>
+      </div>
+    </div>
+    <div class="header-actions">
+      <a href="https://wa.me/212660471759" target="_blank" class="wa-btn"><i class="fab fa-whatsapp"></i><span class="txt"> WhatsApp</span></a>
+      <button class="cart-action" onclick="toggleCart()">
+        <i class="fas fa-shopping-cart"></i>
+        <span class="cart-total" id="headerTotal">0 MAD</span>
+        <span class="badge" id="cartBadge">0</span>
+      </button>
+    </div>
+  </div>
+  <nav class="nav-bar">
+    <div class="nav-inner">
+      <button class="nav-link active" id="nav-home" onclick="showPage('home')"><i class="fas fa-home"></i> Accueil</button>
+      <button class="nav-link" id="nav-catalogue" onclick="showPage('catalogue')"><i class="fas fa-th-large"></i> Catalogue</button>
+      <button class="nav-link" id="nav-commander" onclick="showPage('commander')"><i class="fas fa-truck"></i> Commander</button>
+      <button class="nav-link" id="nav-contact" onclick="showPage('contact')"><i class="fas fa-phone"></i> Contact</button>
+      <button class="nav-promo" onclick="showPage('commander')">🔥 Devis Gratuit</button>
+    </div>
+  </nav>
+</header>
+
+<!-- PAGE HOME -->
+<div class="page active" id="page-home">
+  <div class="hero">
+    <div class="hgrid"></div>
+    <div class="hero-inner">
+      <div>
+        <div class="hero-badge"><i class="fas fa-star"></i> Pièces Auto Premium Maroc</div>
+        <h1>TROUVEZ LA<br>PIÈCE <em>PARFAITE</em><br>POUR VOTRE AUTO</h1>
+        <p class="hero-sub">EL KANDAOUI AUTO KIT — Des centaines de pièces automobiles d'occasion livrées partout au Maroc en 24/48h. Qualité garantie, paiement à la livraison.</p>
+        <div class="hero-acts">
+          <button class="btn-orange" onclick="showPage('catalogue')"><i class="fas fa-bolt"></i> Voir le Catalogue</button>
+          <a href="https://wa.me/212660471759?text=Bonjour,%20je%20cherche%20une%20pièce%20auto" target="_blank" class="btn-outline"><i class="fab fa-whatsapp"></i> Commander WhatsApp</a>
+        </div>
+        <div class="kpis">
+          <div class="kpi"><div class="val" id="kpi-total">185+</div><div class="lbl">Références</div></div>
+          <div class="kpi"><div class="val" id="kpi-marques">19+</div><div class="lbl">Marques</div></div>
+          <div class="kpi"><div class="val">48H</div><div class="lbl">Livraison</div></div>
+        </div>
+      </div>
+      <div>
+        <div class="sw">
+          <h3><i class="fas fa-car"></i> Trouver par Véhicule</h3>
+          <p>Sélectionnez votre véhicule pour voir les pièces disponibles</p>
+          <div class="sw-row"><label>Marque</label><select id="sw-brand" onchange="updateSwModels()"><option value="">-- Toutes les marques --</option></select></div>
+          <div class="sw-row"><label>Modèle</label><select id="sw-model"><option value="">-- Tous les modèles --</option></select></div>
+          <div class="sw-row"><label>Type de pièce</label><select id="sw-piece"><option value="">-- Toutes les pièces --</option></select></div>
+          <button class="sw-btn" onclick="searchVehicle()"><i class="fas fa-search"></i> Rechercher</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="ribbon">
+    <div class="rib-inner">
+      <span class="rib-item"><i class="fas fa-truck"></i> Livraison 24-48H Maroc</span>
+      <span class="rib-item"><i class="fas fa-shield-alt"></i> Pièces Garanties</span>
+      <span class="rib-item"><i class="fas fa-money-bill-wave"></i> Paiement à la Livraison</span>
+      <span class="rib-item"><i class="fab fa-whatsapp"></i> Commander par WhatsApp</span>
+      <span class="rib-item"><i class="fas fa-undo"></i> Retours 7 Jours</span>
+      <span class="rib-item"><i class="fas fa-tag"></i> Prix Compétitifs</span>
+      <span class="rib-item"><i class="fas fa-truck"></i> Livraison 24-48H Maroc</span>
+      <span class="rib-item"><i class="fas fa-shield-alt"></i> Pièces Garanties</span>
+      <span class="rib-item"><i class="fas fa-money-bill-wave"></i> Paiement à la Livraison</span>
+      <span class="rib-item"><i class="fab fa-whatsapp"></i> Commander par WhatsApp</span>
+      <span class="rib-item"><i class="fas fa-undo"></i> Retours 7 Jours</span>
+      <span class="rib-item"><i class="fas fa-tag"></i> Prix Compétitifs</span>
+    </div>
+  </div>
+  <div class="trust-band">
+    <div class="trust-inner">
+      <div class="ti"><div class="ti-icon"><i class="fas fa-truck-fast"></i></div><div><div class="ti-title">Livraison Rapide</div><div class="ti-desc">24 à 48H partout au Maroc</div></div></div>
+      <div class="ti"><div class="ti-icon"><i class="fas fa-money-bill-wave"></i></div><div><div class="ti-title">Paiement Livraison</div><div class="ti-desc">Cash à la réception</div></div></div>
+      <div class="ti"><div class="ti-icon"><i class="fas fa-certificate"></i></div><div><div class="ti-title">Qualité Garantie</div><div class="ti-desc">Pièces vérifiées</div></div></div>
+      <div class="ti"><div class="ti-icon"><i class="fab fa-whatsapp"></i></div><div><div class="ti-title">Support WhatsApp</div><div class="ti-desc">Réponse rapide 7j/7</div></div></div>
+    </div>
+  </div>
+  <div class="catalogue-section">
+    <div class="catalogue-header">
+      <h2>NOS DERNIÈRES <span>PIÈCES</span></h2>
+      <button class="btn-orange" onclick="showPage('catalogue')" style="font-size:11px;padding:9px 16px"><i class="fas fa-th-large"></i> Voir tout le catalogue</button>
+    </div>
+    <div class="pgrid" id="homeGrid"></div>
+    <div style="text-align:center;margin-top:20px">
+      <button class="btn-orange" onclick="showPage('catalogue')"><i class="fas fa-arrow-right"></i> Voir les <span id="home-count">185</span> pièces disponibles</button>
+    </div>
+  </div>
+</div>
+
+<!-- PAGE CATALOGUE -->
+<div class="page" id="page-catalogue">
+  <div class="catalogue-section">
+    <div class="catalogue-header" style="margin-top:20px">
+      <h2>CATALOGUE <span>COMPLET</span></h2>
+      <span class="rc" id="catResultCount"></span>
+    </div>
+    <div style="margin-bottom:14px">
+      <div class="sv" style="max-width:500px">
+        <i class="fas fa-search"></i>
+        <input type="text" id="catSearchInput" placeholder="Marque, modèle, référence, pièce..." autocomplete="off" oninput="onCatSearch()">
+        <button class="sv-clear" id="catClearBtn" onclick="clearCatSearch()" title="Effacer"><i class="fas fa-times"></i></button>
+      </div>
+    </div>
+    <div class="search-info" id="searchInfo">
+      <span>Résultat pour : <strong id="searchInfoText"></strong></span>
+      <button onclick="resetAllFilters()"><i class="fas fa-times"></i> Effacer les filtres</button>
+    </div>
+    <div class="filter-row" id="marqueFilter"></div>
+    <div class="filter-row" id="pieceFilter"></div>
+    <div class="toolbar">
+      <select onchange="sortProducts(this.value)" style="background:var(--grey);border:1px solid var(--border);border-radius:8px;padding:6px 10px;font-family:'Inter',sans-serif;font-size:11px;outline:none">
+        <option value="default">Trier : Par défaut</option>
+        <option value="prix-asc">Prix croissant</option>
+        <option value="prix-desc">Prix décroissant</option>
+        <option value="marque">Marque A-Z</option>
+        <option value="ref">Référence</option>
+      </select>
+      <select id="etatFilter" onchange="applyAllFilters()" style="background:var(--grey);border:1px solid var(--border);border-radius:8px;padding:6px 10px;font-family:'Inter',sans-serif;font-size:11px;outline:none">
+        <option value="">Tous les états</option>
+        <option value="Très bon état">Très bon état</option>
+        <option value="Réparable">Réparable</option>
+        <option value="Non réparable">Non réparable</option>
+      </select>
+      <span class="rc" id="resultCount"><strong>0</strong> pièces</span>
+    </div>
+    <div class="pgrid" id="productsGrid"></div>
+    <div class="pagination" id="pagination"></div>
+  </div>
+</div>
+
+<!-- PAGE COMMANDER -->
+<div class="page" id="page-commander">
+  <div class="page-hero">
+    <div style="font-size:10px;letter-spacing:.25em;color:var(--orange);text-transform:uppercase;font-weight:700;margin-bottom:10px">— COMMANDEZ MAINTENANT —</div>
+    <h1>PASSEZ VOTRE <span>COMMANDE</span></h1>
+    <p>Plusieurs façons de commander — choisissez celle qui vous convient. Livraison sous 24-48H partout au Maroc.</p>
+  </div>
+  <div class="cmd-body">
+    <div>
+      <button class="back-btn" onclick="showPage('home')"><i class="fas fa-arrow-left"></i> Retour</button>
+      <h3 style="font-size:14px;font-weight:800;color:var(--text);margin-bottom:13px">Commander rapidement</h3>
+      <div class="cmd-quick">
+        <a class="cq-card" href="https://wa.me/212660471759?text=Bonjour%20EL%20KANDAOUI%20AUTO%20KIT%2C%20je%20souhaite%20commander%20une%20pièce%20auto." target="_blank">
+          <div class="cq-icon wa"><i class="fab fa-whatsapp"></i></div>
+          <div class="cq-info"><div class="cq-title">Commander par WhatsApp</div><div class="cq-sub">Réponse immédiate · 06 60 47 17 59</div></div>
+          <i class="fas fa-chevron-right cq-arrow"></i>
+        </a>
+        <a class="cq-card" href="sms:+212660471759?body=Bonjour EL KANDAOUI AUTO KIT, je voudrais commander:">
+          <div class="cq-icon sms"><i class="fas fa-sms"></i></div>
+          <div class="cq-info"><div class="cq-title">Commander par SMS</div><div class="cq-sub">Envoyez votre demande par message</div></div>
+          <i class="fas fa-chevron-right cq-arrow"></i>
+        </a>
+        <a class="cq-card" href="tel:0660471759">
+          <div class="cq-icon phone"><i class="fas fa-phone"></i></div>
+          <div class="cq-info"><div class="cq-title">Appeler directement</div><div class="cq-sub">06 60 47 17 59 · Lun-Sam 8h-20h</div></div>
+          <i class="fas fa-chevron-right cq-arrow"></i>
+        </a>
+      </div>
+      <h3 style="font-size:14px;font-weight:800;color:var(--text);margin-bottom:13px">Nos informations</h3>
+      <div class="contact-blocks">
+        <div class="cb"><div class="cb-icon"><i class="fab fa-whatsapp"></i></div><div><div class="cb-lbl">WhatsApp / Tél</div><div class="cb-val"><a href="tel:0660471759">06 60 47 17 59</a></div></div></div>
+        <div class="cb"><div class="cb-icon"><i class="fas fa-map-marker-alt"></i></div><div><div class="cb-lbl">Localisation</div><div class="cb-val">Casablanca, Maroc 🇲🇦</div></div></div>
+        <div class="cb"><div class="cb-icon"><i class="fas fa-clock"></i></div><div><div class="cb-lbl">Horaires</div><div class="cb-val">Lun – Sam : 8h00 – 20h00</div></div></div>
+        <div class="cb"><div class="cb-icon"><i class="fas fa-truck"></i></div><div><div class="cb-lbl">Livraison</div><div class="cb-val">24-48H · Paiement à la réception</div></div></div>
+      </div>
+    </div>
+    <div class="order-form-box">
+      <h3>FORMULAIRE <span>DE COMMANDE</span></h3>
+      <div class="fg-row">
+        <div class="fg"><label>Prénom</label><input id="fname" type="text" placeholder="Votre prénom"></div>
+        <div class="fg"><label>Nom</label><input id="lname" type="text" placeholder="Votre nom"></div>
+      </div>
+      <div class="fg"><label>Téléphone</label><input id="phone" type="tel" placeholder="06 XX XX XX XX"></div>
+      <div class="fg"><label>Ville</label>
+        <select id="city"><option value="">Sélectionner votre ville</option><option>Casablanca</option><option>Rabat</option><option>Marrakech</option><option>Fès</option><option>Tanger</option><option>Agadir</option><option>Meknès</option><option>Oujda</option><option>Autre</option></select>
+      </div>
+      <div class="fg"><label>Marque &amp; Modèle du Véhicule</label><input id="car" type="text" placeholder="Ex: Dacia Logan 2018, Peugeot 208..."></div>
+      <div class="fg"><label>Pièces souhaitées</label><textarea id="parts" placeholder="Décrivez les pièces que vous recherchez (référence, modèle, quantité...)"></textarea></div>
+      <button class="bwa" onclick="sendWhatsApp()"><i class="fab fa-whatsapp"></i> Envoyer via WhatsApp</button>
+      <button class="bsms" onclick="sendSMS()"><i class="fas fa-sms"></i> Envoyer par SMS</button>
+    </div>
+  </div>
+</div>
+
+<!-- PAGE CONTACT -->
+<div class="page" id="page-contact">
+  <div class="page-hero">
+    <div style="font-size:10px;letter-spacing:.25em;color:var(--orange);text-transform:uppercase;font-weight:700;margin-bottom:10px">— BESOIN D'AIDE —</div>
+    <h1>CONTACTEZ <span>EL KANDAOUI</span></h1>
+    <p>Notre équipe est disponible pour répondre à toutes vos questions.</p>
+  </div>
+  <div class="contact-body">
+    <div>
+      <button class="back-btn" onclick="showPage('home')"><i class="fas fa-arrow-left"></i> Retour</button>
+      <div class="contact-map">
+        <i class="fas fa-map-marker-alt"></i>
+        <p><strong>EL KANDAOUI AUTO KIT</strong><br>Casablanca, Maroc<br>Livraison dans tout le Maroc</p>
+      </div>
+      <div class="contact-blocks">
+        <div class="cb"><div class="cb-icon"><i class="fab fa-whatsapp"></i></div><div><div class="cb-lbl">WhatsApp</div><div class="cb-val"><a href="https://wa.me/212660471759" target="_blank">06 60 47 17 59</a></div></div></div>
+        <div class="cb"><div class="cb-icon"><i class="fas fa-phone"></i></div><div><div class="cb-lbl">Téléphone</div><div class="cb-val"><a href="tel:0660471759">06 60 47 17 59</a></div></div></div>
+        <div class="cb"><div class="cb-icon"><i class="fas fa-clock"></i></div><div><div class="cb-lbl">Horaires</div><div class="cb-val">Lun – Sam : 8h00 – 20h00</div></div></div>
+        <div class="cb"><div class="cb-icon"><i class="fas fa-map-marker-alt"></i></div><div><div class="cb-lbl">Localisation</div><div class="cb-val">Casablanca, Maroc 🇲🇦</div></div></div>
+      </div>
+    </div>
+    <div>
+      <h3 style="font-family:'Bebas Neue',sans-serif;font-size:26px;color:var(--black);letter-spacing:.04em;margin-bottom:16px">FAQ — <span style="color:var(--orange)">QUESTIONS FRÉQUENTES</span></h3>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Comment passer une commande ? <i class="fas fa-chevron-down"></i></div><div class="faq-a">Envoyez-nous un message WhatsApp au 06 60 47 17 59 avec la pièce souhaitée, votre véhicule (marque, modèle, année) et votre ville.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Quels sont les délais de livraison ? <i class="fas fa-chevron-down"></i></div><div class="faq-a">Nous livrons partout au Maroc en 24 à 48 heures ouvrables après confirmation. Casablanca et grandes villes en 24h.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Comment se passe le paiement ? <i class="fas fa-chevron-down"></i></div><div class="faq-a">Paiement à la livraison (cash). Vous payez uniquement lorsque vous recevez et vérifiez votre colis. Aucune avance demandée.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Puis-je retourner une pièce ? <i class="fas fa-chevron-down"></i></div><div class="faq-a">Oui, retours acceptés dans les 7 jours si la pièce est dans son état d'origine et non montée.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Les pièces sont-elles garanties ? <i class="fas fa-chevron-down"></i></div><div class="faq-a">Toutes nos pièces sont garanties 3 mois contre les défauts. Contactez-nous par WhatsApp avec photos en cas de problème.</div></div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="ft-top">
+    <div class="ft-brand">
+      <div class="ft-logo">EL KANDAOUI <span>AUTO KIT</span></div>
+      <p>Votre partenaire de confiance pour les pièces automobiles au Maroc. Qualité garantie, livraison rapide, paiement à la livraison.</p>
+      <div class="ft-social">
+        <a class="fsl" href="https://wa.me/212660471759" target="_blank"><i class="fab fa-whatsapp"></i></a>
+        <a class="fsl" href="#"><i class="fab fa-facebook-f"></i></a>
+        <a class="fsl" href="#"><i class="fab fa-instagram"></i></a>
+        <a class="fsl" href="#"><i class="fab fa-tiktok"></i></a>
+      </div>
+    </div>
+    <div class="ft-col"><h4>Catalogue</h4><ul>
+      <li><a onclick="showPage('catalogue');filterByMarque('PEUGEOT')">Peugeot</a></li>
+      <li><a onclick="showPage('catalogue');filterByMarque('RENAULT')">Renault</a></li>
+      <li><a onclick="showPage('catalogue');filterByMarque('DACIA')">Dacia</a></li>
+      <li><a onclick="showPage('catalogue');filterByMarque('BMW')">BMW</a></li>
+      <li><a onclick="showPage('catalogue');filterByMarque('VOLKSWAGEN')">Volkswagen</a></li>
+      <li><a onclick="showPage('catalogue')">Voir tout</a></li>
+    </ul></div>
+    <div class="ft-col"><h4>Service</h4><ul>
+      <li><a onclick="showPage('commander')">Commander</a></li>
+      <li><a onclick="showPage('contact')">Livraison &amp; Retours</a></li>
+      <li><a onclick="showPage('contact')">Garantie</a></li>
+      <li><a onclick="showPage('contact')">FAQ</a></li>
+    </ul></div>
+    <div class="ft-col"><h4>Contact</h4><ul>
+      <li><a href="tel:0660471759">06 60 47 17 59</a></li>
+      <li><a href="https://wa.me/212660471759" target="_blank">WhatsApp</a></li>
+      <li><a>Casablanca, Maroc</a></li>
+      <li><a>Lun-Sam 8h-20h</a></li>
+    </ul></div>
+  </div>
+  <div class="ft-bot">
+    <span>© 2025 EL KANDAOUI AUTO KIT — Tous droits réservés 🇲🇦</span>
+    <span>Paiement à la livraison · Casablanca, Maroc</span>
+  </div>
+</footer>
+
+<!-- PANIER -->
+<div class="cart-overlay" id="cartOverlay" onclick="toggleCart()"></div>
+<div class="cart-panel" id="cartPanel">
+  <div class="cp-hd"><h2>🛒 MON <span>PANIER</span></h2><button class="cp-cls" onclick="toggleCart()"><i class="fas fa-times"></i></button></div>
+  <div class="cp-items" id="cartItems">
+    <div class="cp-empty"><i class="fas fa-box-open"></i><p>Votre panier est vide</p><small>Ajoutez des pièces depuis le catalogue</small></div>
+  </div>
+  <div class="cp-ft">
+    <div class="srow"><span>Sous-total</span><span id="subtotalVal">0 MAD</span></div>
+    <div class="srow"><span>Livraison</span><span style="color:var(--green);font-weight:700">À confirmer</span></div>
+    <div class="trow"><span>TOTAL</span><span class="tprice" id="totalVal">0 MAD</span></div>
+    <div class="cbtns">
+      <button class="bwa" onclick="orderWhatsApp()"><i class="fab fa-whatsapp"></i> Commander via WhatsApp</button>
+      <button class="bsms" onclick="orderSMS()"><i class="fas fa-sms"></i> Commander par SMS</button>
+    </div>
+  </div>
+</div>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" onclick="closeLightbox(event)">
+  <button class="lb-close" onclick="closeLightboxBtn()"><i class="fas fa-times"></i></button>
+  <div class="lb-info" id="lbInfo"></div>
+  <div class="lb-ref" id="lbRef"></div>
+  <img class="lb-img" id="lbImg" src="" alt="">
+  <div class="lb-nav">
+    <button class="lb-prev" id="lbPrev" onclick="lbMove(-1)"><i class="fas fa-chevron-left"></i></button>
+    <span class="lb-counter" id="lbCounter"></span>
+    <button class="lb-next" id="lbNext" onclick="lbMove(1)"><i class="fas fa-chevron-right"></i></button>
+  </div>
+  <div class="lb-dots" id="lbDots"></div>
+</div>
+
+<div class="toast" id="toast"><i class="fas fa-check-circle"></i><span id="toastMsg"></span></div>
+<button class="scroll-top" id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})"><i class="fas fa-chevron-up"></i></button>
+
+<script>
+/* ================================================
+   DONNÉES — 185 PIÈCES AUTO KIT
+   Photos: placez vos images dans un dossier "photos/"
+   à côté de ce fichier HTML.
+   Nommage: REF_1.jpg, REF_2.jpg ... REF_5.jpg
+   Exemple: photos/H001_1.jpg, photos/H001_2.jpg...
+   Formats acceptés: .jpg, .jpeg, .png
+================================================ */
+var allPieces = [{"ref":"H001","marque":"HYUNDAI","modele":"TUCSON","piece":"OPTIQUE D","etat":"Réparable","anomalie":"RAYURE","prix":"3000","photos":["photos/H001_1.jpeg","photos/H001_2.jpeg","photos/H001_3.jpeg","photos/H001_4.jpeg","photos/H001_5.jpeg"]},{"ref":"P001","marque":"PEUGEOT","modele":"301","piece":"OPTIQUE G","etat":"Réparable","anomalie":"FIXATION","prix":"200","photos":["photos/P001_1.jpeg","photos/P001_2.jpeg","photos/P001_3.jpeg","photos/P001_4.jpeg","photos/P001_5.jpeg"]},{"ref":"P002","marque":"PEUGEOT","modele":"2008","piece":"OPTIQUE G","etat":"Très bon état","anomalie":"","prix":"","photo":"","photos":["photos/P002_1.jpeg","photos/P002_2.jpeg","photos/P002_3.jpeg","photos/P002_4.jpeg","photos/P002_5.jpeg"]},{"ref":"P003","marque":"PEUGEOT","modele":"2008","piece":"OPTIQUE D","etat":"Très bon état","anomalie":"","prix":"4700","photo":"","photos":["photos/P003_1.jpeg","photos/P003_2.jpeg","photos/P003_3.jpeg","photos/P003_4.jpeg","photos/P003_5.jpeg"]},{"ref":"P004","marque":"PEUGEOT","modele":"3008","piece":"OPTIQUE D","etat":"Réparable","anomalie":"FIXATION","prix":"3","photo":"","photos":["photos/P004_1.jpeg","photos/P004_2.jpeg","photos/P004_3.jpeg","photos/P004_4.jpeg","photos/P004_5.jpeg"]},{"ref":"O001","marque":"OPEL","modele":"CORSA","piece":"OPTIQUE D","etat":"Réparable","anomalie":"FIXATION","prix":"","photo":"","photos":["photos/O001_1.jpeg","photos/O001_2.jpeg","photos/O001_3.jpeg","photos/O001_4.jpeg","photos/O001_5.jpeg"]},{"ref":"MB001","marque":"MERCEDES","modele":"C W 205","piece":"OPTIQUE D","etat":"Non réparable","anomalie":"FISSURE GLASSE","prix":"","photo":"","photos":["photos/MB001_1.jpeg","photos/MB001_2.jpeg","photos/MB001_3.jpeg","photos/MB001_4.jpeg","photos/MB001_5.jpeg"]},{"ref":"P005","marque":"PEUGEOT","modele":"308","piece":"OPTIQUE D","etat":"Très bon état","anomalie":"","prix":"","photo":"","photos":["photos/P005_1.jpeg","photos/P005_2.jpeg","photos/P005_3.jpeg","photos/P005_4.jpeg","photos/P005_5.jpeg"]},{"ref":"FS001","marque":"FORD","modele":"FIESTA MK8","piece":"","etat":"Réparable","anomalie":"FIXATION","prix":"","photo":"","photos":["photos/FS001_1.jpeg","photos/FS001_2.jpeg","photos/FS001_3.jpeg","photos/FS001_4.jpeg","photos/FS001_5.jpeg"]},{"ref":"FS002","marque":"FORD","modele":"FIESTA MK7","piece":"OPTIQUE D","etat":"Réparable","anomalie":"FIXATION","prix":"","photo":"","photos":["photos/FS002_1.jpeg","photos/FS002_2.jpeg","photos/FS002_3.jpeg","photos/FS002_4.jpeg","photos/FS002_5.jpeg"]},{"ref":"FS003","marque":"FORD","modele":"FIESTA MK7","piece":"OPTIQUE G","etat":"Réparable","anomalie":"FIXATION","prix":"","photo":"","photos":["photos/FS003_1.jpeg","photos/FS003_2.jpeg","photos/FS003_3.jpeg","photos/FS003_4.jpeg","photos/FS003_5.jpeg"]},{"ref":"O002","marque":"OPEL","modele":"ASTRA","piece":"OPTIQUE D","etat":"Réparable","anomalie":"FIXATION","prix":"","photo":"","photos":["photos/O002_1.jpeg","photos/O002_2.jpeg","photos/O002_3.jpeg","photos/O002_4.jpeg","photos/O002_5.jpeg"]},{"ref":"O003","marque":"OPEL","modele":"ASTRA","piece":"OPTIQUE D","etat":"Très bon état","anomalie":"","prix":"","photo":"","photos":["photos/O003_1.jpeg","photos/O003_2.jpeg","photos/O003_3.jpeg","photos/O003_4.jpeg","photos/O003_5.jpeg"]},{"ref":"O004","marque":"OPEL","modele":"CORSA","piece":"OPTIQUE D","etat":"Réparable","anomalie":"FIXATION","prix":"","photo":"","photos":["photos/O004_1.jpeg","photos/O004_2.jpeg","photos/O004_3.jpeg","photos/O004_4.jpeg","photos/O004_5.jpeg"]},{"ref":"T001","marque":"TOYOTA","modele":"YARIS","piece":"OPTIQUE D","etat":"Réparable","anomalie":"FIXATION","prix":"","photo":"","photos":["photos/T001_1.jpeg","photos/T001_2.jpeg","photos/T001_3.jpeg","photos/T001_4.jpeg","photos/T001_5.jpeg"]},{"ref":"T002","marque":"TOYOTA","modele":"YARIS","piece":"OPTIQUE G","etat":"Réparable","anomalie":"FIXATION","prix":"","photo":"","photos":["photos/T002_1.jpeg","photos/T002_2.jpeg","photos/T002_3.jpeg","photos/T002_4.jpeg","photos/T002_5.jpeg"]},{"ref":"T003","marque":"TOYOTA","modele":"COROLLA","piece":"","etat":"Réparable","anomalie":"FIXATION","prix":"","photo":"","photos":["photos/T003_1.jpeg","photos/T003_2.jpeg","photos/T003_3.jpeg","photos/T003_4.jpeg","photos/T003_5.jpeg"]},{"ref":"T004","marque":"TOYOTA","modele":"COROLLA","piece":"","etat":"Réparable","anomalie":"FIXATION","prix":"","photo":"","photos":["photos/T004_1.jpeg","photos/T004_2.jpeg","photos/T004_3.jpeg","photos/T004_4.jpeg","photos/T004_5.jpeg"]},{"ref":"T005","marque":"TOYOTA","modele":"COROLLA","piece":"OPTIQUE G","etat":"Très bon état","anomalie":"","prix":"","photo":"","photos":["photos/T005_1.jpeg","photos/T005_2.jpeg","photos/T005_3.jpeg","photos/T005_4.jpeg","photos/T005_5.jpeg"]},{"ref":"O005","marque":"OPEL","modele":"ADAM","piece":"OPTIQUE G","etat":"","anomalie":"FIXATION           GLASS CASSE","prix":"","photo":"","photos":["photos/O005_1.jpeg","photos/O005_2.jpeg","photos/O005_3.jpeg","photos/O005_4.jpeg","photos/O005_5.jpeg"]},{"ref":"N001","marque":"NISSAN","modele":"PRIMERIA","piece":"OPTIQUE D","etat":"Réparable","anomalie":"FIXATION","prix":"","photo":"","photos":["photos/N001_1.jpeg","photos/N001_2.jpeg","photos/N001_3.jpeg","photos/N001_4.jpeg","photos/N001_5.jpeg"]},{"ref":"D001","marque":"DACIA","modele":"DUSTER","piece":"OPTIQUE G","etat":"Non réparable","anomalie":"FISSURE GLASSE","prix":"","photo":"","photos":["photos/D001_1.jpeg","photos/D001_2.jpeg","photos/D001_3.jpeg","photos/D001_4.jpeg","photos/D001_5.jpeg"]},{"ref":"D002","marque":"DACIA","modele":"LOGAN 1","piece":"OPTIQUE D","etat":"","anomalie":"FIXATION BASSE","prix":"","photo":"","photos":["photos/D002_1.jpeg","photos/D002_2.jpeg","photos/D002_3.jpeg","photos/D002_4.jpeg","photos/D002_5.jpeg"]},{"ref":"BM001","marque":"BMW","modele":"SERIE 1","piece":"OPTIQUE G","etat":"Réparable","anomalie":"FIXATION","prix":"","photo":"","photos":["photos/BM001_1.jpeg","photos/BM001_2.jpeg","photos/BM001_3.jpeg","photos/BM001_4.jpeg","photos/BM001_5.jpeg"]},{"ref":"H002","marque":"HYUNDAI","modele":"CRETA","piece":"OPTIQUE D","etat":"Très bon état","anomalie":"","prix":"","photo":"","photos":["photos/H002_1.jpeg","photos/H002_2.jpeg","photos/H002_3.jpeg","photos/H002_4.jpeg","photos/H002_5.jpeg"]},{"ref":"N002","marque":"NISSAN","modele":"JUKE","piece":"OPTIQUE G","etat":"Réparable","anomalie":"FIXATION MULTIPLE","prix":"","photo":"","photos":["photos/N002_1.jpeg","photos/N002_2.jpeg","photos/N002_3.jpeg","photos/N002_4.jpeg","photos/N002_5.jpeg"]},{"ref":"N003","marque":"NISSAN","modele":"QASHQAI","piece":"OPTIQUE G","etat":"Réparable","anomalie":"FIXATION","prix":"","photo":"","photos":["photos/N003_1.jpeg","photos/N003_2.jpeg","photos/N003_3.jpeg","photos/N003_4.jpeg","photos/N003_5.jpeg"]},{"ref":"R001","marque":"RENAULT","modele":"EXPRESS","piece":"OPTIQUE D","etat":"Réparable","anomalie":"FIXATION MULTIPLE","prix":"","photo":"","photos":["photos/R001_1.jpeg","photos/R001_2.jpeg","photos/R001_3.jpeg","photos/R001_4.jpeg","photos/R001_5.jpeg"]},{"ref":"VW001","marque":"VOLKSWAGEN","modele":"GOLF 7","piece":"OPTIQUE G","etat":"Très bon état","anomalie":"","prix":"","photo":"","photos":["photos/VW001_1.jpeg","photos/VW001_2.jpeg","photos/VW001_3.jpeg","photos/VW001_4.jpeg","photos/VW001_5.jpeg"]},{"ref":"VW002","marque":"VOLKSWAGEN","modele":"GOLF 7","piece":"OPTIQUE D","etat":"Très bon état","anomalie":"","prix":"","photo":"","photos":["photos/VW002_1.jpeg","photos/VW002_2.jpeg","photos/VW002_3.jpeg","photos/VW002_4.jpeg","photos/VW002_5.jpeg"]},{"ref":"VW003","marque":"VOLKSWAGEN","modele":"GOLF 7","piece":"OPTIQUE D","etat":"Non réparable","anomalie":"FISSURE GLASSE","prix":"","photo":"","photos":["photos/VW003_1.jpeg","photos/VW003_2.jpeg","photos/VW003_3.jpeg","photos/VW003_4.jpeg","photos/VW003_5.jpeg"]},{"ref":"VW004","marque":"VOLKSWAGEN","modele":"GOLF 7","piece":"OPTIQUE D","etat":"Réparable","anomalie":"FIXATION","prix":"","photo":"","photos":["photos/VW004_1.jpeg","photos/VW004_2.jpeg","photos/VW004_3.jpeg","photos/VW004_4.jpeg","photos/VW004_5.jpeg"]},{"ref":"VW005","marque":"VOLKSWAGEN","modele":"GOLF 6","piece":"OPTIQUE D","etat":"Non réparable","anomalie":"FISSURE GLASSE","prix":"","photo":"","photos":["photos/VW005_1.jpeg","photos/VW005_2.jpeg","photos/VW005_3.jpeg","photos/VW005_4.jpeg","photos/VW005_5.jpeg"]},{"ref":"VW006","marque":"VOLKSWAGEN","modele":"TOUARGUE","piece":"OPTIQUE D","etat":"Très bon état","anomalie":"","prix":"","photo":"","photos":["photos/VW006_1.jpeg","photos/VW006_2.jpeg","photos/VW006_3.jpeg","photos/VW006_4.jpeg","photos/VW006_5.jpeg"]},{"ref":"R002","marque":"RENAULT","modele":"MEGANE 4","piece":"OPTIQUE G","etat":"Réparable","anomalie":"FIXATION MULTIPLE","prix":"","photo":"","photos":["photos/R002_1.jpeg","photos/R002_2.jpeg","photos/R002_3.jpeg","photos/R002_4.jpeg","photos/R002_5.jpeg"]},{"ref":"D003","marque":"DACIA","modele":"DUSTER","piece":"OPTIQUE D","etat":"Réparable","anomalie":"FIXATION MULTIPLE","prix":"","photo":"","photos":["photos/D003_1.jpeg","photos/D003_2.jpeg","photos/D003_3.jpeg","photos/D003_4.jpeg","photos/D003_5.jpeg"]},{"ref":"D004","marque":"DACIA","modele":"LOGAN 2","piece":"OPTIQUE G","etat":"Très bon état","anomalie":"","prix":"","photo":"","photos":["photos/D004_1.jpeg","photos/D004_2.jpeg","photos/D004_3.jpeg","photos/D004_4.jpeg","photos/D004_5.jpeg"]},{"ref":"D005","marque":"DACIA","modele":"LOGAN 2","piece":"OPTIQUE G","etat":"Réparable","anomalie":"FIXATION","prix":"","photo":"","photos":["photos/D005_1.jpeg","photos/D005_2.jpeg","photos/D005_3.jpeg","photos/D005_4.jpeg","photos/D005_5.jpeg"]},{"ref":"D006","marque":"DACIA","modele":"DUSTER","piece":"OPTIQUE G","etat":"Très bon état","anomalie":"","prix":"","photo":"","photos":["photos/D006_1.jpeg","photos/D006_2.jpeg","photos/D006_3.jpeg","photos/D006_4.jpeg","photos/D006_5.jpeg"]},{"ref":"D007","marque":"DACIA","modele":"LOGAN 3","piece":"OPTIQUE G","etat":"Réparable","anomalie":"FIXATION MULTIPLE","prix":"","photo":"","photos":["photos/D007_1.jpeg","photos/D007_2.jpeg","photos/D007_3.jpeg","photos/D007_4.jpeg","photos/D007_5.jpeg"]},{"ref":"D008","marque":"DACIA","modele":"LOGAN 2","piece":"OPTIQUE G","etat":"Réparable","anomalie":"FIXATION MULTIPLE","prix":"","photo":"","photos":["photos/D008_1.jpeg","photos/D008_2.jpeg","photos/D008_3.jpeg","photos/D008_4.jpeg","photos/D008_5.jpeg"]},{"ref":"R003","marque":"RENAULT","modele":"MEGANE 4","piece":"OPTIQUE G","etat":"Non réparable","anomalie":"GLASSE CASSE","prix":"","photo":"","photos":["photos/R003_1.jpeg","photos/R003_2.jpeg","photos/R003_3.jpeg","photos/R003_4.jpeg","photos/R003_5.jpeg"]},{"ref":"R004","marque":"RENAULT","modele":"MEGANE 4","piece":"OPTIQUE D","etat":"Très bon état","anomalie":"","prix":"","photo":"","photos":["photos/R004_1.jpeg","photos/R004_2.jpeg","photos/R004_3.jpeg","photos/R004_4.jpeg","photos/R004_5.jpeg"]},{"ref":"VW007","marque":"VOLKSWAGEN","modele":"GOLF 7","piece":"OPTIQUE D","etat":"Très bon état","anomalie":"","prix":"","photo":"","photos":["photos/VW007_1.jpeg","photos/VW007_2.jpeg","photos/VW007_3.jpeg","photos/VW007_4.jpeg","photos/VW007_5.jpeg"]},{"ref":"BM002","marque":"BMW","modele":"SERIE 2","piece":"OPTIQUE G","etat":"Très bon état","anomalie":"","prix":"","photo":"","photos":["photos/BM002_1.jpeg","photos/BM002_2.jpeg","photos/BM002_3.jpeg","photos/BM002_4.jpeg","photos/BM002_5.jpeg"]},{"ref":"BM003","marque":"BMW","modele":"SERIE 5","piece":"OPTIQUE D","etat":"","anomalie":"PETITE FISSURE","prix":"","photo":"","photos":["photos/BM003_1.jpeg","photos/BM003_2.jpeg","photos/BM003_3.jpeg","photos/BM003_4.jpeg","photos/BM003_5.jpeg"]},{"ref":"VW008","marque":"VOLKSWAGEN","modele":"GOLF 7 PHASE 1","piece":"OPTIQUE D","etat":"Non réparable","anomalie":"GLASSE CASSE","prix":"","photo":"","photos":["photos/VW008_1.jpeg","photos/VW008_2.jpeg","photos/VW008_3.jpeg","photos/VW008_4.jpeg","photos/VW008_5.jpeg"]},{"ref":"MB002","marque":"MERCEDES","modele":"GLC PHASE 2","piece":"OPTIQUE G","etat":"Réparable","anomalie":"FIXATION","prix":"","photo":"","photos":["photos/MB002_1.jpeg","photos/MB002_2.jpeg","photos/MB002_3.jpeg","photos/MB002_4.jpeg","photos/MB002_5.jpeg"]},{"ref":"R005","marque":"RENAULT","modele":"MEGANE 4","piece":"OPTIQUE G","etat":"","anomalie":"FIXATION GLASSE CASSE","prix":"","photo":"","photos":["photos/R005_1.jpeg","photos/R005_2.jpeg","photos/R005_3.jpeg","photos/R005_4.jpeg","photos/R005_5.jpeg"]},{"ref":"P006","marque":"PEUGEOT","modele":"308 PHASE 2","piece":"OPTIQUE G","etat":"Réparable","anomalie":"FIXATION","prix":"","photo":"","photos":["photos/P006_1.jpeg","photos/P006_2.jpeg","photos/P006_3.jpeg","photos/P006_4.jpeg","photos/P006_5.jpeg"]},{"ref":"R006","marque":"RENAULT","modele":"CAPTUR PHASE 2","piece":"OPTIQUE G","etat":"Réparable","anomalie":"FIXATION","prix":"","photo":"","photos":["photos/R006_1.jpeg","photos/R006_2.jpeg","photos/R006_3.jpeg","photos/R006_4.jpeg","photos/R006_5.jpeg"]},{"ref":"P007","marque":"PEUGEOT","modele":"301 PHASE 2","piece":"OPTIQUE D","etat":"","anomalie":"GLASSE CASSE FIXATION","prix":"","photo":"","photos":["photos/P007_1.jpeg","photos/P007_2.jpeg","photos/P007_3.jpeg","photos/P007_4.jpeg","photos/P007_5.jpeg"]},{"ref":"H003","marque":"HYUNDAI","modele":"H-100","piece":"OPTIQUE D","etat":"Réparable","anomalie":"FIXATION","prix":"","photo":"","photos":["photos/H003_1.jpeg","photos/H003_2.jpeg","photos/H003_3.jpeg","photos/H003_4.jpeg","photos/H003_5.jpeg"]},{"ref":"H004","marque":"HYUNDAI","modele":"I30","piece":"OPTIQUE D","etat":"","anomalie":"PETITE FISSURE","prix":"","photo":"","photos":["photos/H004_1.jpeg","photos/H004_2.jpeg","photos/H004_3.jpeg","photos/H004_4.jpeg","photos/H004_5.jpeg"]},{"ref":"H005","marque":"HYUNDAI","modele":"I30","piece":"OPTIQUE G","etat":"Réparable","anomalie":"FIXATION MULTIPLE","prix":"","photo":"","photos":["photos/H005_1.jpeg","photos/H005_2.jpeg","photos/H005_3.jpeg","photos/H005_4.jpeg","photos/H005_5.jpeg"]},{"ref":"H006","marque":"HYUNDAI","modele":"TUCSON 3 PHASE 2","piece":"OPTIQUE D","etat":"Très bon état","anomalie":"","prix":"","photo":"","photos":["photos/H006_1.jpeg","photos/H006_2.jpeg","photos/H006_3.jpeg","photos/H006_4.jpeg","photos/H006_5.jpeg"]},{"ref":"H007","marque":"HYUNDAI","modele":"ACCENT","piece":"OPTIQUE G","etat":"Réparable","anomalie":"FIXATION","prix":"","photo":"","photos":["photos/H007_1.jpeg","photos/H007_2.jpeg","photos/H007_3.jpeg","photos/H007_4.jpeg","photos/H007_5.jpeg"]},{"ref":"H008","marque":"HYUNDAI","modele":"ACCENT","piece":"OPTIQUE D","etat":"","anomalie":"FIXATION MULTIPLE  GLASSE CASSE","prix":"","photo":"","photos":["photos/H008_1.jpeg","photos/H008_2.jpeg","photos/H008_3.jpeg","photos/H008_4.jpeg","photos/H008_5.jpeg"]},{"ref":"R007","marque":"RENAULT","modele":"CLIO","piece":"OPTIQUE D","etat":"Réparable","anomalie":"FIXATION MULTIPLE","prix":"","photo":"","photos":["photos/R007_1.jpeg","photos/R007_2.jpeg","photos/R007_3.jpeg","photos/R007_4.jpeg","photos/R007_5.jpeg"]},{"ref":"R008","marque":"RENAULT","modele":"KADJAR","piece":"OPTIQUE D","etat":"Réparable","anomalie":"FIXATION","prix":"","photo":"","photos":["photos/R008_1.jpeg","photos/R008_2.jpeg","photos/R008_3.jpeg","photos/R008_4.jpeg","photos/R008_5.jpeg"]},{"ref":"FS004","marque":"FORD","modele":"KUGA","piece":"OPTIQUE G","etat":"Très bon état","anomalie":"","prix":"","photo":"","photos":["photos/FS004_1.jpeg","photos/FS004_2.jpeg","photos/FS004_3.jpeg","photos/FS004_4.jpeg","photos/FS004_5.jpeg"]},{"ref":"FS005","marque":"FORD","modele":"C-MAX","piece":"OPTIQUE D","etat":"Non réparable","anomalie":"FISSURE GLASSE","prix":"","photo":"","photos":["photos/FS005_1.jpeg","photos/FS005_2.jpeg","photos/FS005_3.jpeg","photos/FS005_4.jpeg","photos/FS005_5.jpeg"]},{"ref":"VW009","marque":"VOLKSWAGEN","modele":"TIGUIN","piece":"OPTIQUE G","etat":"Réparable","anomalie":"FIXATION MULTIPLE","prix":"","photo":"","photos":["photos/VW009_1.jpeg","photos/VW009_2.jpeg","photos/VW009_3.jpeg","photos/VW009_4.jpeg","photos/VW009_5.jpeg"]},{"ref":"K001","marque":"KIA","modele":"CEED","piece":"OPTIQUE G","etat":"","anomalie":"PETITE FISSURE NA","prix":"","photo":"","photos":["photos/K001_1.jpeg","photos/K001_2.jpeg","photos/K001_3.jpeg","photos/K001_4.jpeg","photos/K001_5.jpeg"]},{"ref":"R009","marque":"RENAULT","modele":"CAPTUR PHASE 2","piece":"OPTIQUE D","etat":"Réparable","anomalie":"FIXATION","prix":"","photo":"","photos":["photos/R009_1.jpeg","photos/R009_2.jpeg","photos/R009_3.jpeg","photos/R009_4.jpeg","photos/R009_5.jpeg"]},{"ref":"VW010","marque":"VOLKSWAGEN","modele":"T-ROC","piece":"OPTIQUE D","etat":"","anomalie":"FIXATION MULTIPLE  RAYURE","prix":"","photo":"","photos":["photos/VW010_1.jpeg","photos/VW010_2.jpeg","photos/VW010_3.jpeg","photos/VW010_4.jpeg","photos/VW010_5.jpeg"]},{"ref":"S001","marque":"SKODA","modele":"KAROQ","piece":"OPTIQUE D","etat":"Réparable","anomalie":"FIXATION","prix":"","photo":"","photos":["photos/S001_1.jpeg","photos/S001_2.jpeg","photos/S001_3.jpeg","photos/S001_4.jpeg","photos/S001_5.jpeg"]},{"ref":"MZ001","marque":"MAZDA","modele":"3","piece":"OPTIQUE G","etat":"Très bon état","anomalie":"","prix":"","photo":"","photos":["photos/MZ001_1.jpeg","photos/MZ001_2.jpeg","photos/MZ001_3.jpeg","photos/MZ001_4.jpeg","photos/MZ001_5.jpeg"]},{"ref":"R010","marque":"RENAULT","modele":"EXPRESS","piece":"OPTIQUE G","etat":"Réparable","anomalie":"FIXATION","prix":"","photo":"","photos":["photos/R010_1.jpeg","photos/R010_2.jpeg","photos/R010_3.jpeg","photos/R010_4.jpeg","photos/R010_5.jpeg"]},{"ref":"D009","marque":"DACIA","modele":"DOKKER","piece":"OPTIQUE G","etat":"Réparable","anomalie":"FIXATION STK","prix":"","photo":"","photos":["photos/D009_1.jpeg","photos/D009_2.jpeg","photos/D009_3.jpeg","photos/D009_4.jpeg","photos/D009_5.jpeg"]},{"ref":"N004","marque":"NISSAN","modele":"QACHQAI","piece":"OPTIQUE D","etat":"Réparable","anomalie":"RAYURE","prix":"","photo":"","photos":["photos/N004_1.jpeg","photos/N004_2.jpeg","photos/N004_3.jpeg","photos/N004_4.jpeg","photos/N004_5.jpeg"]},{"ref":"VW011","marque":"VOLKSWAGEN","modele":"TIGUIN","piece":"OPTIQUE D","etat":"","anomalie":"FIXATION GALSSE CASSE","prix":"","photo":"","photos":["photos/VW011_1.jpeg","photos/VW011_2.jpeg","photos/VW011_3.jpeg","photos/VW011_4.jpeg","photos/VW011_5.jpeg"]},{"ref":"VW012","marque":"VOLKSWAGEN","modele":"TOUARGUE","piece":"OPTIQUE D","etat":"Non réparable","anomalie":"GLASSE CASSE","prix":"","photo":"","photos":["photos/VW012_1.jpeg","photos/VW012_2.jpeg","photos/VW012_3.jpeg","photos/VW012_4.jpeg","photos/VW012_5.jpeg"]},{"ref":"VW013","marque":"VOLKSWAGEN","modele":"TOUARGUE","piece":"OPTIQUE D","etat":"Réparable","anomalie":"FIXATION","prix":"","photo":"","photos":["photos/VW013_1.jpeg","photos/VW013_2.jpeg","photos/VW013_3.jpeg","photos/VW013_4.jpeg","photos/VW013_5.jpeg"]},{"ref":"P008","marque":"PEUGEOT","modele":"208","piece":"OPTIQUE D","etat":"Réparable","anomalie":"FIXATION","prix":"","photo":"","photos":["photos/P008_1.jpeg","photos/P008_2.jpeg","photos/P008_3.jpeg","photos/P008_4.jpeg","photos/P008_5.jpeg"]},{"ref":"H009","marque":"HYUNDAI","modele":"ACCENT","piece":"OPTIQUE D","etat":"Réparable","anomalie":"FIXATION","prix":"","photo":"","photos":["photos/H009_1.jpeg","photos/H009_2.jpeg","photos/H009_3.jpeg","photos/H009_4.jpeg","photos/H009_5.jpeg"]},{"ref":"H010","marque":"HYUNDAI","modele":"ACCENT","piece":"OPTIQUE G","etat":"Réparable","anomalie":"FIXATION","prix":"","photo":"","photos":["photos/H010_1.jpeg","photos/H010_2.jpeg","photos/H010_3.jpeg","photos/H010_4.jpeg","photos/H010_5.jpeg"]},{"ref":"D010","marque":"DACIA","modele":"DOKKER","piece":"OPTIQUE D","etat":"Réparable","anomalie":"FIXATION","prix":"","photo":"","photos":["photos/D010_1.jpeg","photos/D010_2.jpeg","photos/D010_3.jpeg","photos/D010_4.jpeg","photos/D010_5.jpeg"]},{"ref":"R011","marque":"RENAULT","modele":"KANGO EVO","piece":"OPTIQUE D","etat":"Réparable","anomalie":"FIXATION","prix":"","photo":"","photos":["photos/R011_1.jpeg","photos/R011_2.jpeg","photos/R011_3.jpeg","photos/R011_4.jpeg","photos/R011_5.jpeg"]},{"ref":"R012","marque":"RENAULT","modele":"KADJAR","piece":"OPTIQUE G","etat":"Réparable","anomalie":"FIXATION","prix":"","photo":"","photos":["photos/R012_1.jpeg","photos/R012_2.jpeg","photos/R012_3.jpeg","photos/R012_4.jpeg","photos/R012_5.jpeg"]},{"ref":"D011","marque":"DACIA","modele":"DOKKER","piece":"OPTIQUE G","etat":"Réparable","anomalie":"FIXATION","prix":"","photo":"","photos":["photos/D011_1.jpeg","photos/D011_2.jpeg","photos/D011_3.jpeg","photos/D011_4.jpeg","photos/D011_5.jpeg"]},{"ref":"R013","marque":"RENAULT","modele":"FLUANCE","piece":"OPTIQUE G","etat":"Réparable","anomalie":"STK","prix":"","photo":"","photos":["photos/R013_1.jpeg","photos/R013_2.jpeg","photos/R013_3.jpeg","photos/R013_4.jpeg","photos/R013_5.jpeg"]},{"ref":"D012","marque":"DACIA","modele":"DOKKER","piece":"OPTIQUE G","etat":"Réparable","anomalie":"FIXATION","prix":"","photo":"","photos":["photos/D012_1.jpeg","photos/D012_2.jpeg","photos/D012_3.jpeg","photos/D012_4.jpeg","photos/D012_5.jpeg"]},{"ref":"D013","marque":"DACIA","modele":"DOKKER","piece":"OPTIQUE G","etat":"Réparable","anomalie":"FIXATION","prix":"","photo":"","photos":["photos/D013_1.jpeg","photos/D013_2.jpeg","photos/D013_3.jpeg","photos/D013_4.jpeg","photos/D013_5.jpeg"]},{"ref":"D014","marque":"DACIA","modele":"DOKKER","piece":"OPTIQUE D","etat":"Très bon état","anomalie":"","prix":"","photo":"","photos":["photos/D014_1.jpeg","photos/D014_2.jpeg","photos/D014_3.jpeg","photos/D014_4.jpeg","photos/D014_5.jpeg"]},{"ref":"D015","marque":"DACIA","modele":"DOKKER","piece":"OPTIQUE D","etat":"Réparable","anomalie":"FIXATION","prix":"","photo":"","photos":["photos/D015_1.jpeg","photos/D015_2.jpeg","photos/D015_3.jpeg","photos/D015_4.jpeg","photos/D015_5.jpeg"]},{"ref":"P009","marque":"PEUGEOT","modele":"301","piece":"OPTIQUE G","etat":"Très bon état","anomalie":"","prix":"","photo":"","photos":["photos/P009_1.jpeg","photos/P009_2.jpeg","photos/P009_3.jpeg","photos/P009_4.jpeg","photos/P009_5.jpeg"]},{"ref":"D016","marque":"DACIA","modele":"LOGAN","piece":"OPTIQUE D","etat":"Réparable","anomalie":"FIXATION","prix":"","photo":"","photos":["photos/D016_1.jpeg","photos/D016_2.jpeg","photos/D016_3.jpeg","photos/D016_4.jpeg","photos/D016_5.jpeg"]},{"ref":"P010","marque":"PEUGEOT","modele":"301","piece":"OPTIQUE D","etat":"Très bon état","anomalie":"","prix":"","photo":"","photos":["photos/P010_1.jpeg","photos/P010_2.jpeg","photos/P010_3.jpeg","photos/P010_4.jpeg","photos/P010_5.jpeg"]},{"ref":"P011","marque":"PEUGEOT","modele":"301","piece":"OPTIQUE D","etat":"Réparable","anomalie":"FIXATION","prix":"","photo":"","photos":["photos/P011_1.jpeg","photos/P011_2.jpeg","photos/P011_3.jpeg","photos/P011_4.jpeg","photos/P011_5.jpeg"]},{"ref":"C001","marque":"CITROEN","modele":"C3","piece":"OPTIQUE G","etat":"Très bon état","anomalie":"","prix":"","photo":"","photos":["photos/C001_1.jpeg","photos/C001_2.jpeg","photos/C001_3.jpeg","photos/C001_4.jpeg","photos/C001_5.jpeg"]},{"ref":"VW014","marque":"VOLKSWAGEN","modele":"TOUARGUE","piece":"OPTIQUE G","etat":"Réparable","anomalie":"FIXATION","prix":"","photo":"","photos":["photos/VW014_1.jpeg","photos/VW014_2.jpeg","photos/VW014_3.jpeg","photos/VW014_4.jpeg","photos/VW014_5.jpeg"]},{"ref":"FS006","marque":"FORD","modele":"FIESTA","piece":"OPTIQUE D","etat":"Réparable","anomalie":"FIXATION","prix":"","photo":"","photos":["photos/FS006_1.jpeg","photos/FS006_2.jpeg","photos/FS006_3.jpeg","photos/FS006_4.jpeg","photos/FS006_5.jpeg"]},{"ref":"N005","marque":"NISSAN","modele":"QACHQAI 2","piece":"OPTIQUE G","etat":"Réparable","anomalie":"FIXATION","prix":"","photo":"","photos":["photos/N005_1.jpeg","photos/N005_2.jpeg","photos/N005_3.jpeg","photos/N005_4.jpeg","photos/N005_5.jpeg"]},{"ref":"BM004","marque":"BMW","modele":"X4","piece":"OPTIQUE D","etat":"Très bon état","anomalie":"","prix":"","photo":"","photos":["photos/BM004_1.jpeg","photos/BM004_2.jpeg","photos/BM004_3.jpeg","photos/BM004_4.jpeg","photos/BM004_5.jpeg"]},{"ref":"D017","marque":"DACIA","modele":"SANDERO 2","piece":"OPTIQUE D","etat":"Réparable","anomalie":"FIXATION","prix":"","photo":"","photos":["photos/D017_1.jpeg","photos/D017_2.jpeg","photos/D017_3.jpeg","photos/D017_4.jpeg","photos/D017_5.jpeg"]},{"ref":"D018","marque":"DACIA","modele":"SANDERO 2","piece":"OPTIQUE D","etat":"Réparable","anomalie":"FIXATION","prix":"","photo":"","photos":["photos/D018_1.jpeg","photos/D018_2.jpeg","photos/D018_3.jpeg","photos/D018_4.jpeg","photos/D018_5.jpeg"]},{"ref":"P012","marque":"PEUGEOT","modele":"208","piece":"OPTIQUE D","etat":"Très bon état","anomalie":"","prix":"","photo":"","photos":["photos/P012_1.jpeg","photos/P012_2.jpeg","photos/P012_3.jpeg","photos/P012_4.jpeg","photos/P012_5.jpeg"]},{"ref":"C002","marque":"CITROEN","modele":"C3","piece":"OPTIQUE G","etat":"Très bon état","anomalie":"","prix":"","photo":"","photos":["photos/C002_1.jpeg","photos/C002_2.jpeg","photos/C002_3.jpeg","photos/C002_4.jpeg","photos/C002_5.jpeg"]},{"ref":"D019","marque":"DACIA","modele":"LODGY","piece":"OPTIQUE D","etat":"Réparable","anomalie":"FIXATION","prix":"","photo":"","photos":["photos/D019_1.jpeg","photos/D019_2.jpeg","photos/D019_3.jpeg","photos/D019_4.jpeg","photos/D019_5.jpeg"]},{"ref":"P013","marque":"PEUGEOT","modele":"301","piece":"OPTIQUE D","etat":"Très bon état","anomalie":"","prix":"","photo":"","photos":["photos/P013_1.jpeg","photos/P013_2.jpeg","photos/P013_3.jpeg","photos/P013_4.jpeg","photos/P013_5.jpeg"]},{"ref":"VW015","marque":"VOLKSWAGEN","modele":"CC PHASE 2","piece":"OPTIQUE G","etat":"Non réparable","anomalie":"GLASSE CASSE","prix":"","photo":"","photos":["photos/VW015_1.jpeg","photos/VW015_2.jpeg","photos/VW015_3.jpeg","photos/VW015_4.jpeg","photos/VW015_5.jpeg"]},{"ref":"H011","marque":"HYUNDAI","modele":"ACCENT","piece":"OPTIQUE G","etat":"Réparable","anomalie":"FIXATION","prix":"","photo":"","photos":["photos/H011_1.jpeg","photos/H011_2.jpeg","photos/H011_3.jpeg","photos/H011_4.jpeg","photos/H011_5.jpeg"]},{"ref":"D020","marque":"DACIA","modele":"SANDERO 2","piece":"OPTIQUE D","etat":"Réparable","anomalie":"STK","prix":"","photo":"","photos":["photos/D020_1.jpeg","photos/D020_2.jpeg","photos/D020_3.jpeg","photos/D020_4.jpeg","photos/D020_5.jpeg"]},{"ref":"D021","marque":"DACIA","modele":"DOKKER","piece":"OPTIQUE G","etat":"Réparable","anomalie":"FIXATION MULTIPLE","prix":"","photo":"","photos":["photos/D021_1.jpeg","photos/D021_2.jpeg","photos/D021_3.jpeg","photos/D021_4.jpeg","photos/D021_5.jpeg"]},{"ref":"D022","marque":"DACIA","modele":"DOKKER","piece":"OPTIQUE D","etat":"Réparable","anomalie":"FIXATION MULTIPLE","prix":"","photo":"","photos":["photos/D022_1.jpeg","photos/D022_2.jpeg","photos/D022_3.jpeg","photos/D022_4.jpeg","photos/D022_5.jpeg"]},{"ref":"R014","marque":"RENAULT","modele":"SYMBOLE","piece":"OPTIQUE D","etat":"Très bon état","anomalie":"","prix":"","photo":"","photos":["photos/R014_1.jpeg","photos/R014_2.jpeg","photos/R014_3.jpeg","photos/R014_4.jpeg","photos/R014_5.jpeg"]},{"ref":"D023","marque":"DACIA","modele":"DOKKER","piece":"OPTIQUE D","etat":"Réparable","anomalie":"RAYURE","prix":"","photo":"","photos":["photos/D023_1.jpeg","photos/D023_2.jpeg","photos/D023_3.jpeg","photos/D023_4.jpeg","photos/D023_5.jpeg"]},{"ref":"R015","marque":"RENAULT","modele":"CAPTUR PHASE 1","piece":"OPTIQUE G","etat":"Réparable","anomalie":"FIXATION","prix":"","photo":"","photos":["photos/R015_1.jpeg","photos/R015_2.jpeg","photos/R015_3.jpeg","photos/R015_4.jpeg","photos/R015_5.jpeg"]},{"ref":"D024","marque":"DACIA","modele":"DOKKER","piece":"OPTIQUE G","etat":"Réparable","anomalie":"FIXATION","prix":"","photo":"","photos":["photos/D024_1.jpeg","photos/D024_2.jpeg","photos/D024_3.jpeg","photos/D024_4.jpeg","photos/D024_5.jpeg"]},{"ref":"D025","marque":"DACIA","modele":"DOKKER","piece":"OPTIQUE G","etat":"Réparable","anomalie":"FIXATION","prix":"","photo":"","photos":["photos/D025_1.jpeg","photos/D025_2.jpeg","photos/D025_3.jpeg","photos/D025_4.jpeg","photos/D025_5.jpeg"]},{"ref":"P014","marque":"PEUGEOT","modele":"208","piece":"OPTIQUE D","etat":"Réparable","anomalie":"FIXATION","prix":"","photo":"","photos":["photos/P014_1.jpeg","photos/P014_2.jpeg","photos/P014_3.jpeg","photos/P014_4.jpeg","photos/P014_5.jpeg"]},{"ref":"D026","marque":"DACIA","modele":"SANDERO 2","piece":"OPTIQUE D","etat":"Réparable","anomalie":"FIXATION MULTIPLE","prix":"","photo":"","photos":["photos/D026_1.jpeg","photos/D026_2.jpeg","photos/D026_3.jpeg","photos/D026_4.jpeg","photos/D026_5.jpeg"]},{"ref":"R015","marque":"RENAULT","modele":"EXPRESS 2","piece":"OPTIQUE G","etat":"Réparable","anomalie":"FIXATION MULTIPLE","prix":"","photo":"","photos":["photos/R015_1.jpeg","photos/R015_2.jpeg","photos/R015_3.jpeg","photos/R015_4.jpeg","photos/R015_5.jpeg"]},{"ref":"BM005","marque":"BMW","modele":"SERIE 5 G 30","piece":"OPTIQUE G","etat":"Non réparable","anomalie":"GLASSE CASSE","prix":"","photo":"","photos":["photos/BM005_1.jpeg","photos/BM005_2.jpeg","photos/BM005_3.jpeg","photos/BM005_4.jpeg","photos/BM005_5.jpeg"]},{"ref":"R016","marque":"RENAULT","modele":"CAPTUR PHASE 1","piece":"OPTIQUE G","etat":"Très bon état","anomalie":"","prix":"","photo":"","photos":["photos/R016_1.jpeg","photos/R016_2.jpeg","photos/R016_3.jpeg","photos/R016_4.jpeg","photos/R016_5.jpeg"]},{"ref":"C003","marque":"CITROEN","modele":"C3","piece":"OPTIQUE D","etat":"Réparable","anomalie":"FIXATION","prix":"","photo":"","photos":["photos/C003_1.jpeg","photos/C003_2.jpeg","photos/C003_3.jpeg","photos/C003_4.jpeg","photos/C003_5.jpeg"]},{"ref":"FS007","marque":"FORD","modele":"FOCUS 3 PHASE 2 RESTYLE","piece":"OPTIQUE D","etat":"Réparable","anomalie":"FIXATION","prix":"","photo":"","photos":["photos/FS007_1.jpeg","photos/FS007_2.jpeg","photos/FS007_3.jpeg","photos/FS007_4.jpeg","photos/FS007_5.jpeg"]},{"ref":"D027","marque":"DACIA","modele":"DUSTER 2","piece":"OPTIQUE D","etat":"Réparable","anomalie":"FIXATION","prix":"","photo":"","photos":["photos/D027_1.jpeg","photos/D027_2.jpeg","photos/D027_3.jpeg","photos/D027_4.jpeg","photos/D027_5.jpeg"]},{"ref":"R017","marque":"RENAULT","modele":"EXPRESS","piece":"OPTIQUE G","etat":"Réparable","anomalie":"FIXATION","prix":"","photo":"","photos":["photos/R017_1.jpeg","photos/R017_2.jpeg","photos/R017_3.jpeg","photos/R017_4.jpeg","photos/R017_5.jpeg"]},{"ref":"FS008","marque":"FORD","modele":"KUGA","piece":"OPTIQUE D","etat":"Non réparable","anomalie":"GLASSE CASSE","prix":"","photo":"","photos":["photos/FS008_1.jpeg","photos/FS008_2.jpeg","photos/FS008_3.jpeg","photos/FS008_4.jpeg","photos/FS008_5.jpeg"]},{"ref":"D028","marque":"DACIA","modele":"SANDERO 1","piece":"OPTIQUE D","etat":"Réparable","anomalie":"RAYURE","prix":"","photo":"","photos":["photos/D028_1.jpeg","photos/D028_2.jpeg","photos/D028_3.jpeg","photos/D028_4.jpeg","photos/D028_5.jpeg"]},{"ref":"D029","marque":"DACIA","modele":"SANDERO 2","piece":"OPTIQUE G","etat":"Réparable","anomalie":"FIXATION","prix":"","photo":"","photos":["photos/D029_1.jpeg","photos/D029_2.jpeg","photos/D029_3.jpeg","photos/D029_4.jpeg","photos/D029_5.jpeg"]},{"ref":"P015","marque":"PEUGEOT","modele":"301","piece":"OPTIQUE D","etat":"Très bon état","anomalie":"","prix":"","photo":"","photos":["photos/P015_1.jpeg","photos/P015_2.jpeg","photos/P015_3.jpeg","photos/P015_4.jpeg","photos/P015_5.jpeg"]},{"ref":"D030","marque":"DACIA","modele":"DOKKER","piece":"OPTIQUE G","etat":"Réparable","anomalie":"FIXATION","prix":"","photo":"","photos":["photos/D030_1.jpeg","photos/D030_2.jpeg","photos/D030_3.jpeg","photos/D030_4.jpeg","photos/D030_5.jpeg"]},{"ref":"D031","marque":"DACIA","modele":"DOKKER","piece":"OPTIQUE D","etat":"Réparable","anomalie":"FIXATION","prix":"","photo":"","photos":["photos/D031_1.jpeg","photos/D031_2.jpeg","photos/D031_3.jpeg","photos/D031_4.jpeg","photos/D031_5.jpeg"]},{"ref":"H012","marque":"HYUNDAI","modele":"I30","piece":"OPTIQUE G","etat":"Réparable","anomalie":"STK","prix":"","photo":"","photos":["photos/H012_1.jpeg","photos/H012_2.jpeg","photos/H012_3.jpeg","photos/H012_4.jpeg","photos/H012_5.jpeg"]},{"ref":"D032","marque":"DACIA","modele":"DUSTER 1","piece":"OPTIQUE G","etat":"Très bon état","anomalie":"","prix":"","photo":"","photos":["photos/D032_1.jpeg","photos/D032_2.jpeg","photos/D032_3.jpeg","photos/D032_4.jpeg","photos/D032_5.jpeg"]},{"ref":"H013","marque":"HYUNDAI","modele":"ACCENT","piece":"OPTIQUE D","etat":"Réparable","anomalie":"FIXATION","prix":"","photo":"","photos":["photos/H013_1.jpeg","photos/H013_2.jpeg","photos/H013_3.jpeg","photos/H013_4.jpeg","photos/H013_5.jpeg"]},{"ref":"P016","marque":"PEUGEOT","modele":"2008 1","piece":"OPTIQUE D","etat":"Réparable","anomalie":"FIXATION","prix":"","photo":"","photos":["photos/P016_1.jpeg","photos/P016_2.jpeg","photos/P016_3.jpeg","photos/P016_4.jpeg","photos/P016_5.jpeg"]},{"ref":"P017","marque":"PEUGEOT","modele":"208","piece":"OPTIQUE D","etat":"Réparable","anomalie":"FIXATION STK","prix":"","photo":"","photos":["photos/P017_1.jpeg","photos/P017_2.jpeg","photos/P017_3.jpeg","photos/P017_4.jpeg","photos/P017_5.jpeg"]},{"ref":"D033","marque":"DACIA","modele":"DOKKER","piece":"OPTIQUE D","etat":"Réparable","anomalie":"FIXATION","prix":"","photo":"","photos":["photos/D033_1.jpeg","photos/D033_2.jpeg","photos/D033_3.jpeg","photos/D033_4.jpeg","photos/D033_5.jpeg"]},{"ref":"R018","marque":"RENAULT","modele":"EXPRESS","piece":"OPTIQUE D","etat":"Réparable","anomalie":"FIXATION","prix":"","photo":"","photos":["photos/R018_1.jpeg","photos/R018_2.jpeg","photos/R018_3.jpeg","photos/R018_4.jpeg","photos/R018_5.jpeg"]},{"ref":"D034","marque":"DACIA","modele":"DOKKER","piece":"OPTIQUE D","etat":"Réparable","anomalie":"FIXATION","prix":"","photo":"","photos":["photos/D034_1.jpeg","photos/D034_2.jpeg","photos/D034_3.jpeg","photos/D034_4.jpeg","photos/D034_5.jpeg"]},{"ref":"D035","marque":"DACIA","modele":"DOKKER","piece":"OPTIQUE D","etat":"Réparable","anomalie":"FIXATION","prix":"","photo":"","photos":["photos/D035_1.jpeg","photos/D035_2.jpeg","photos/D035_3.jpeg","photos/D035_4.jpeg","photos/D035_5.jpeg"]},{"ref":"P018","marque":"PEUGEOT","modele":"208","piece":"OPTIQUE G","etat":"Réparable","anomalie":"FIXATION","prix":"","photo":"","photos":["photos/P018_1.jpeg","photos/P018_2.jpeg","photos/P018_3.jpeg","photos/P018_4.jpeg","photos/P018_5.jpeg"]},{"ref":"D036","marque":"DACIA","modele":"DOKKER","piece":"OPTIQUE G","etat":"Réparable","anomalie":"FIXATION MULTIPLE","prix":"","photo":"","photos":["photos/D036_1.jpeg","photos/D036_2.jpeg","photos/D036_3.jpeg","photos/D036_4.jpeg","photos/D036_5.jpeg"]},{"ref":"D037","marque":"DACIA","modele":"LOGAN 1","piece":"OPTIQUE D","etat":"Réparable","anomalie":"FIXATION","prix":"","photo":"","photos":["photos/D037_1.jpeg","photos/D037_2.jpeg","photos/D037_3.jpeg","photos/D037_4.jpeg","photos/D037_5.jpeg"]},{"ref":"P019","marque":"PEUGEOT","modele":"301","piece":"OPTIQUE G","etat":"Réparable","anomalie":"FIXATION MULTIPLE","prix":"","photo":"","photos":["photos/P019_1.jpeg","photos/P019_2.jpeg","photos/P019_3.jpeg","photos/P019_4.jpeg","photos/P019_5.jpeg"]},{"ref":"D038","marque":"DACIA","modele":"LODGY","piece":"OPTIQUE D","etat":"Réparable","anomalie":"FIXATION","prix":"","photo":"","photos":["photos/D038_1.jpeg","photos/D038_2.jpeg","photos/D038_3.jpeg","photos/D038_4.jpeg","photos/D038_5.jpeg"]},{"ref":"D039","marque":"DACIA","modele":"LOGAN 1","piece":"OPTIQUE G","etat":"Réparable","anomalie":"FIXATION","prix":"","photo":"","photos":["photos/D039_1.jpeg","photos/D039_2.jpeg","photos/D039_3.jpeg","photos/D039_4.jpeg","photos/D039_5.jpeg"]},{"ref":"H014","marque":"HYUNDAI","modele":"I30 3 G","piece":"OPTIQUE D","etat":"","anomalie":"FISSURE FIXATION","prix":"","photo":"","photos":["photos/H014_1.jpeg","photos/H014_2.jpeg","photos/H014_3.jpeg","photos/H014_4.jpeg","photos/H014_5.jpeg"]},{"ref":"BMW006","marque":"BMW","modele":"X3 G01/F97X3M","piece":"MALE ARRIERE","etat":"","anomalie":"PETITE CHOC","prix":"","photo":"","photos":["photos/BMW006_1.jpeg","photos/BMW006_2.jpeg","photos/BMW006_3.jpeg","photos/BMW006_4.jpeg","photos/BMW006_5.jpeg"]},{"ref":"BMW007","marque":"BMW","modele":"X5 G05 PH 2","piece":"CAPO","etat":"Réparable","anomalie":"RAYURE","prix":"","photo":"","photos":["photos/BMW007_1.jpeg","photos/BMW007_2.jpeg","photos/BMW007_3.jpeg","photos/BMW007_4.jpeg","photos/BMW007_5.jpeg"]},{"ref":"BMW007","marque":"BMW","modele":"X5 G05 PH 2","piece":"CALANDRE","etat":"","anomalie":"CASSE","prix":"","photo":"","photos":["photos/BMW007_1.jpeg","photos/BMW007_2.jpeg","photos/BMW007_3.jpeg","photos/BMW007_4.jpeg","photos/BMW007_5.jpeg"]},{"ref":"BMW007","marque":"BMW","modele":"X5 G05 PH 2","piece":"GUIDE D'AIR","etat":"","anomalie":"CASSE REPARABLE","prix":"","photo":"","photos":["photos/BMW007_1.jpeg","photos/BMW007_2.jpeg","photos/BMW007_3.jpeg","photos/BMW007_4.jpeg","photos/BMW007_5.jpeg"]},{"ref":"BMW007","marque":"BMW","modele":"X5 G05 PH 2","piece":"MASQUE AVANT","etat":"Réparable","anomalie":"FIXATION","prix":"","photo":"","photos":["photos/BMW007_1.jpeg","photos/BMW007_2.jpeg","photos/BMW007_3.jpeg","photos/BMW007_4.jpeg","photos/BMW007_5.jpeg"]},{"ref":"BMW007","marque":"BMW","modele":"X5 G05 PH 2","piece":"DOUBLEUR PLAGE MASQUE","etat":"Très bon état","anomalie":"","prix":"","photo":"","photos":["photos/BMW007_1.jpeg","photos/BMW007_2.jpeg","photos/BMW007_3.jpeg","photos/BMW007_4.jpeg","photos/BMW007_5.jpeg"]},{"ref":"BMW007","marque":"BMW","modele":"X5 G05 PH 2","piece":"ABSORBEUR","etat":"","anomalie":"PETITE CASSE","prix":"","photo":"","photos":["photos/BMW007_1.jpeg","photos/BMW007_2.jpeg","photos/BMW007_3.jpeg","photos/BMW007_4.jpeg","photos/BMW007_5.jpeg"]},{"ref":"A001","marque":"AUDI","modele":"Q5/SQ5","piece":"OPTIQUE G","etat":"Réparable","anomalie":"FIXATION","prix":"","photo":"","photos":["photos/A001_1.jpeg","photos/A001_2.jpeg","photos/A001_3.jpeg","photos/A001_4.jpeg","photos/A001_5.jpeg"]},{"ref":"BM008","marque":"BMW","modele":"X1 F48","piece":"OPTIQUE D","etat":"Réparable","anomalie":"FIXATION","prix":"","photo":"","photos":["photos/BM008_1.jpeg","photos/BM008_2.jpeg","photos/BM008_3.jpeg","photos/BM008_4.jpeg","photos/BM008_5.jpeg"]},{"ref":"R019","marque":"RENAULT","modele":"CLIO 5","piece":"OPTIQUE D","etat":"Réparable","anomalie":"FIXATION","prix":"","photo":"","photos":["photos/R019_1.jpeg","photos/R019_2.jpeg","photos/R019_3.jpeg","photos/R019_4.jpeg","photos/R019_5.jpeg"]},{"ref":"P020","marque":"PEUGEOT","modele":"208","piece":"OPTIQUE G","etat":"Réparable","anomalie":"FIXATION","prix":"","photo":"","photos":["photos/P020_1.jpeg","photos/P020_2.jpeg","photos/P020_3.jpeg","photos/P020_4.jpeg","photos/P020_5.jpeg"]},{"ref":"VW016","marque":"VOLKSWAGEN","modele":"TIGUIN","piece":"OPTIQUE D","etat":"Réparable","anomalie":"FIXATION","prix":"","photo":"","photos":["photos/VW016_1.jpeg","photos/VW016_2.jpeg","photos/VW016_3.jpeg","photos/VW016_4.jpeg","photos/VW016_5.jpeg"]},{"ref":"ST001","marque":"SEAT","modele":"ATECA","piece":"OPTIQUE G","etat":"Réparable","anomalie":"FIXATION STK","prix":"","photo":"","photos":["photos/ST001_1.jpeg","photos/ST001_2.jpeg","photos/ST001_3.jpeg","photos/ST001_4.jpeg","photos/ST001_5.jpeg"]},{"ref":"ST002","marque":"SEAT","modele":"ATECA","piece":"OPTIQUE D","etat":"","anomalie":"STK GLASSE CASSE FIXATION","prix":"","photo":"","photos":["photos/ST002_1.jpeg","photos/ST002_2.jpeg","photos/ST002_3.jpeg","photos/ST002_4.jpeg","photos/ST002_5.jpeg"]},{"ref":"A003","marque":"AUDI","modele":"Q8 HD MATRIX LED","piece":"OPTIQUE G","etat":"Très bon état","anomalie":"","prix":"","photo":"","photos":["photos/A003_1.jpeg","photos/A003_2.jpeg","photos/A003_3.jpeg","photos/A003_4.jpeg","photos/A003_5.jpeg"]},{"ref":"A002","marque":"AUDI","modele":"Q8 HD MATRIX LED","piece":"OPTIQUE D","etat":"Très bon état","anomalie":"","prix":"","photo":"","photos":["photos/A002_1.jpeg","photos/A002_2.jpeg","photos/A002_3.jpeg","photos/A002_4.jpeg","photos/A002_5.jpeg"]},{"ref":"A004","marque":"AUDI","modele":"Q5","piece":"OPTIQUE D","etat":"","anomalie":"CASSE EN BAS","prix":"","photo":"","photos":["photos/A004_1.jpeg","photos/A004_2.jpeg","photos/A004_3.jpeg","photos/A004_4.jpeg","photos/A004_5.jpeg"]},{"ref":"A005","marque":"AUDI","modele":"Q5","piece":"OPTIQUE G","etat":"Réparable","anomalie":"FIXATION","prix":"","photo":"","photos":["photos/A005_1.jpeg","photos/A005_2.jpeg","photos/A005_3.jpeg","photos/A005_4.jpeg","photos/A005_5.jpeg"]},{"ref":"S002","marque":"SKODA","modele":"OCTAVIA 3","piece":"OPTIQUE G","etat":"Réparable","anomalie":"STK","prix":"","photo":"","photos":["photos/S002_1.jpeg","photos/S002_2.jpeg","photos/S002_3.jpeg","photos/S002_4.jpeg","photos/S002_5.jpeg"]},{"ref":"VO001","marque":"VOLVO","modele":"XC60","piece":"OPTIQUE G","etat":"Réparable","anomalie":"FIXATION STK","prix":"","photo":"","photos":["photos/VO001_1.jpeg","photos/VO001_2.jpeg","photos/VO001_3.jpeg","photos/VO001_4.jpeg","photos/VO001_5.jpeg"]},{"ref":"BM009","marque":"BMW","modele":"X5 G05 PH 1","piece":"OPTIQUE D","etat":"Réparable","anomalie":"STK","prix":"","photo":"","photos":["photos/BM009_1.jpeg","photos/BM009_2.jpeg","photos/BM009_3.jpeg","photos/BM009_4.jpeg","photos/BM009_5.jpeg"]},{"ref":"BM010","marque":"BMW","modele":"SERIE 4 G22 G 23 G 24 G 26","piece":"OPTIQUE G","etat":"Très bon état","anomalie":"","prix":"","photo":"","photos":["photos/BM010_1.jpeg","photos/BM010_2.jpeg","photos/BM010_3.jpeg","photos/BM010_4.jpeg","photos/BM010_5.jpeg"]},{"ref":"BM011","marque":"BMW","modele":"SERIE 5 G60 G61","piece":"OPTIQUE G","etat":"Réparable","anomalie":"FIXATION","prix":"","photo":"","photos":["photos/BM011_1.jpeg","photos/BM011_2.jpeg","photos/BM011_3.jpeg","photos/BM011_4.jpeg","photos/BM011_5.jpeg"]},{"ref":"BM012","marque":"BMW","modele":"SERIE 2 F44","piece":"OPTIQUE G","etat":"Réparable","anomalie":"FIXATION","prix":"","photo":"","photos":["photos/BM012_1.jpeg","photos/BM012_2.jpeg","photos/BM012_3.jpeg","photos/BM012_4.jpeg","photos/BM012_5.jpeg"]},{"ref":"ST003","marque":"SEAT","modele":"LEON FR","piece":"OPTIQUE D","etat":"Réparable","anomalie":"FIXATION","prix":"","photo":"","photos":["photos/ST003_1.jpeg","photos/ST003_2.jpeg","photos/ST003_3.jpeg","photos/ST003_4.jpeg","photos/ST003_5.jpeg"]},{"ref":"RR001","marque":"RANGE ROVER","modele":"EVOQUE PH1","piece":"OPTIQUE D","etat":"Très bon état","anomalie":"","prix":"","photo":"","photos":["photos/RR001_1.jpeg","photos/RR001_2.jpeg","photos/RR001_3.jpeg","photos/RR001_4.jpeg","photos/RR001_5.jpeg"]},{"ref":"H0F176:F18815","marque":"HYUNDAI","modele":"TUCSON 4 NX4","piece":"OPTIQUE D","etat":"Réparable","anomalie":"PLASTIQUE CASSE","prix":"","photo":"","photos":["photos/H0F176:F18815_1.jpeg","photos/H0F176:F18815_2.jpeg","photos/H0F176:F18815_3.jpeg","photos/H0F176:F18815_4.jpeg","photos/H0F176:F18815_5.jpeg"]},{"ref":"RR002","marque":"RANGE ROVER","modele":"EVOQUE PH2 TYPE L 551","piece":"OPTIQUE G","etat":"Réparable","anomalie":"FIXATION","prix":"","photo":"","photos":["photos/RR002_1.jpeg","photos/RR002_2.jpeg","photos/RR002_3.jpeg","photos/RR002_4.jpeg","photos/RR002_5.jpeg"]},{"ref":"RR003","marque":"RANGE ROVER","modele":"EVOQUE PH1","piece":"OPTIQUE G","etat":"Réparable","anomalie":"FIXATION","prix":"","photo":"","photos":["photos/RR003_1.jpeg","photos/RR003_2.jpeg","photos/RR003_3.jpeg","photos/RR003_4.jpeg","photos/RR003_5.jpeg"]},{"ref":"D040","marque":"DACIA","modele":"SANDERO 3","piece":"OPTIQUE G","etat":"Réparable","anomalie":"FIXATION","prix":"","photo":"","photos":["photos/D040_1.jpeg","photos/D040_2.jpeg","photos/D040_3.jpeg","photos/D040_4.jpeg","photos/D040_5.jpeg"]},{"ref":"R021","marque":"RENAULT","modele":"CLIO 5","piece":"OPTIQUE G","etat":"Réparable","anomalie":"FIXATION","prix":"","photo":"","photos":["photos/R021_1.jpeg","photos/R021_2.jpeg","photos/R021_3.jpeg","photos/R021_4.jpeg","photos/R021_5.jpeg"]},{"ref":"C004","marque":"CITROEN","modele":"C5 PH2","piece":"OPTIQUE D","etat":"Réparable","anomalie":"FIXATION","prix":"","photo":"","photos":["photos/C004_1.jpeg","photos/C004_2.jpeg","photos/C004_3.jpeg","photos/C004_4.jpeg","photos/C004_5.jpeg"]},{"ref":"H016","marque":"HYUNDAI","modele":"ACCENT","piece":"OPTIQUE G","etat":"Réparable","anomalie":"FIXATION","prix":"","photo":"","photos":["photos/H016_1.jpeg","photos/H016_2.jpeg","photos/H016_3.jpeg","photos/H016_4.jpeg","photos/H016_5.jpeg"]},{"ref":"R022","marque":"RENAULT","modele":"EXPRESS","piece":"OPTIQUE D","etat":"Réparable","anomalie":"FIXATION","prix":"","photo":"","photos":["photos/R022_1.jpeg","photos/R022_2.jpeg","photos/R022_3.jpeg","photos/R022_4.jpeg","photos/R022_5.jpeg"]},{"ref":"R023","marque":"RENAULT","modele":"CAPTURE 1","piece":"OPTIQUE G","etat":"Très bon état","anomalie":"","prix":"","photo":"","photos":["photos/R023_1.jpeg","photos/R023_2.jpeg","photos/R023_3.jpeg","photos/R023_4.jpeg","photos/R023_5.jpeg"]},{"ref":"K002","marque":"KIA","modele":"SPORTAGE 5 N Q5","piece":"OPTIQUE D","etat":"Réparable","anomalie":"PLASTIQUE CASSE","prix":"","photo":"","photos":["photos/K002_1.jpeg","photos/K002_2.jpeg","photos/K002_3.jpeg","photos/K002_4.jpeg","photos/K002_5.jpeg"]},{"ref":"R024","marque":"RENAULT","modele":"MASTER 3","piece":"OPTIQUE G","etat":"Non réparable","anomalie":"GLASSE CASSE","prix":"","photo":"","photos":["photos/R024_1.jpeg","photos/R024_2.jpeg","photos/R024_3.jpeg","photos/R024_4.jpeg","photos/R024_5.jpeg"]},{"ref":"T006","marque":"TOYOTA","modele":"COROLA","piece":"OPTIQUE G","etat":"Très bon état","anomalie":"","prix":"","photo":"","photos":["photos/T006_1.jpeg","photos/T006_2.jpeg","photos/T006_3.jpeg","photos/T006_4.jpeg","photos/T006_5.jpeg"]},{"ref":"T007","marque":"TOYOTA","modele":"COROLA","piece":"OPTIQUE D","etat":"Réparable","anomalie":"FIXATION","prix":"","photo":"","photos":["photos/T007_1.jpeg","photos/T007_2.jpeg","photos/T007_3.jpeg","photos/T007_4.jpeg","photos/T007_5.jpeg"]},{"ref":"VW017","marque":"VOLKSWAGEN","modele":"TIGUIN","piece":"OPTIQUE G","etat":"Très bon état","anomalie":"","prix":"","photo":"","photos":["photos/VW017_1.jpeg","photos/VW017_2.jpeg","photos/VW017_3.jpeg","photos/VW017_4.jpeg","photos/VW017_5.jpeg"]},{"ref":"S003","marque":"SKODA","modele":"KAROQ","piece":"OPTIQUE G","etat":"Réparable","anomalie":"STK","prix":"","photo":"","photos":["photos/S003_1.jpeg","photos/S003_2.jpeg","photos/S003_3.jpeg","photos/S003_4.jpeg","photos/S003_5.jpeg"]},{"ref":"H017","marque":"HYUNDAI","modele":"ACCENT","piece":"OPTIQUE D","etat":"Très bon état","anomalie":"","prix":"","photo":"","photos":["photos/H017_1.jpeg","photos/H017_2.jpeg","photos/H017_3.jpeg","photos/H017_4.jpeg","photos/H017_5.jpeg"]},{"ref":"O006","marque":"OPEL","modele":"ASTRA","piece":"OPTIQUE D","etat":"Réparable","anomalie":"FIXATION","prix":"","photo":"","photos":["photos/O006_1.jpeg","photos/O006_2.jpeg","photos/O006_3.jpeg","photos/O006_4.jpeg","photos/O006_5.jpeg"]}];
+
+/* ================================================
+   CONFIG
+================================================ */
+var PHONE = '212660471759';
+var ITEMS_PER_PAGE = 20;
+
+/* ================================================
+   ÉTAT GLOBAL
+================================================ */
+var filtered = [], cart = [];
+var currentPage = 1, sortMode = 'default';
+var activeMarque = '', activePiece = '', catSearchText = '';
+
+/* ================================================
+   LIGHTBOX STATE
+================================================ */
+var lbPiece = null, lbCurrent = 0, lbLoaded = [];
+
+/* Préparer les données */
+allPieces.forEach(function(p) {
+  p.prix_clean = (p.prix && p.prix !== '') ? parseFloat(p.prix) : null;
+  /* Les chemins photos sont déjà dans p.photos[] */
+});
+
+/* ================================================
+   UTILS
+================================================ */
+function esc(s){ return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+
+function getPieceIcon(piece) {
+  if (!piece) return '🔧';
+  var u = piece.toUpperCase();
+  if (u.indexOf('OPTIQUE') !== -1) return '💡';
+  if (u.indexOf('CALANDRE') !== -1) return '🚗';
+  if (u.indexOf('MALE') !== -1 || u.indexOf('MÂLE') !== -1) return '🚗';
+  if (u.indexOf('MASQUE') !== -1) return '🚗';
+  if (u.indexOf('ABSORBEUR') !== -1) return '🛡️';
+  if (u.indexOf('CAPO') !== -1) return '🚗';
+  return '🔧';
+}
+function etatClass(e){ return e==='Très bon état'?'etat-bon':e==='Réparable'?'etat-rep':e==='Non réparable'?'etat-non':''; }
+function etatIcon(e){ return e==='Très bon état'?'✅':e==='Réparable'?'🔧':e==='Non réparable'?'❌':''; }
+
+/* ================================================
+   TEST EXISTENCE PHOTOS (async, sans serveur)
+   Technique : on tente de charger l'image en JS
+   Si ça échoue → pas de photo pour ce slot
+================================================ */
+var photoCache = {}; /* ref -> [chemins valides trouvés] */
+
+function testImage(src) {
+  return new Promise(function(resolve) {
+    if (photoCache['_test_'+src] !== undefined) { resolve(photoCache['_test_'+src]); return; }
+    var img = new Image();
+    img.onload = function(){ photoCache['_test_'+src] = true; resolve(true); };
+    img.onerror = function(){ photoCache['_test_'+src] = false; resolve(false); };
+    img.src = src;
+  });
+}
+
+/* Tester toutes les variantes pour une référence */
+function getValidPhotos(ref, photoPaths) {
+  if (photoCache[ref]) return Promise.resolve(photoCache[ref]);
+  var promises = photoPaths.map(function(p){ return testImage(p); });
+  return Promise.all(promises).then(function(results) {
+    var valid = photoPaths.filter(function(_,i){ return results[i]; });
+    photoCache[ref] = valid;
+    return valid;
+  });
+}
+
+/* ================================================
+   INIT
+================================================ */
+function init() {
+  var marques = [], pieces = [];
+  allPieces.forEach(function(p) {
+    if (p.marque && marques.indexOf(p.marque) === -1) marques.push(p.marque);
+    if (p.piece && pieces.indexOf(p.piece) === -1) pieces.push(p.piece);
+  });
+  marques.sort(); pieces.sort();
+
+  document.getElementById('kpi-total').textContent = allPieces.length + '+';
+  document.getElementById('kpi-marques').textContent = marques.length + '+';
+  document.getElementById('home-count').textContent = allPieces.length;
+
+  var mf = document.getElementById('marqueFilter');
+  mf.innerHTML = '<span style="font-size:10px;font-weight:700;color:var(--text3);text-transform:uppercase;letter-spacing:.1em;align-self:center">Marque :</span>' +
+    '<div class="pill active" onclick="filterByMarque(\'\')">Toutes</div>' +
+    marques.map(function(m){ return '<div class="pill" onclick="filterByMarque(\''+m+'\')">'+m+'</div>'; }).join('');
+
+  var pf = document.getElementById('pieceFilter');
+  pf.innerHTML = '<span style="font-size:10px;font-weight:700;color:var(--text3);text-transform:uppercase;letter-spacing:.1em;align-self:center">Type :</span>' +
+    '<div class="pill active" onclick="filterByPiece(\'\')">Tous</div>' +
+    pieces.map(function(p){ return '<div class="pill" onclick="filterByPiece(\''+p.replace(/\'/g,"\\'")+'\')">'+p+'</div>'; }).join('');
+
+  document.getElementById('sw-brand').innerHTML = '<option value="">-- Toutes les marques --</option>' +
+    marques.map(function(m){ return '<option value="'+m+'">'+m+'</option>'; }).join('');
+  document.getElementById('sw-piece').innerHTML = '<option value="">-- Toutes les pièces --</option>' +
+    pieces.map(function(p){ return '<option value="'+p+'">'+p+'</option>'; }).join('');
+
+  applyAllFilters();
+  renderHome();
+}
+
+/* ================================================
+   FILTRES
+================================================ */
+function applyAllFilters() {
+  var q = catSearchText.toLowerCase().trim();
+  var etat = document.getElementById('etatFilter').value;
+  filtered = allPieces.filter(function(p) {
+    if (activeMarque && p.marque !== activeMarque) return false;
+    if (activePiece && p.piece !== activePiece) return false;
+    if (etat && p.etat !== etat) return false;
+    if (q) {
+      var h = (p.ref+' '+p.marque+' '+p.modele+' '+p.piece+' '+p.etat+' '+p.anomalie).toLowerCase();
+      if (h.indexOf(q) === -1) return false;
+    }
+    return true;
+  });
+  if (sortMode==='prix-asc') filtered.sort(function(a,b){return (a.prix_clean||99999)-(b.prix_clean||99999);});
+  else if (sortMode==='prix-desc') filtered.sort(function(a,b){return (b.prix_clean||0)-(a.prix_clean||0);});
+  else if (sortMode==='marque') filtered.sort(function(a,b){return a.marque.localeCompare(b.marque);});
+  else if (sortMode==='ref') filtered.sort(function(a,b){return a.ref.localeCompare(b.ref);});
+  currentPage = 1;
+  updateSearchInfo();
+  renderGrid(filtered,'productsGrid','resultCount','pagination',true);
+  document.getElementById('catResultCount').innerHTML = '<strong>'+filtered.length+'</strong> pièce'+(filtered.length>1?'s':'');
+}
+
+function updateSearchInfo() {
+  var parts = [];
+  if (catSearchText) parts.push('"'+catSearchText+'"');
+  if (activeMarque) parts.push(activeMarque);
+  if (activePiece) parts.push(activePiece);
+  var info = document.getElementById('searchInfo');
+  if (parts.length) { info.classList.add('show'); document.getElementById('searchInfoText').textContent = parts.join(' · '); }
+  else info.classList.remove('show');
+}
+
+function filterByMarque(m) {
+  activeMarque = m;
+  document.querySelectorAll('#marqueFilter .pill').forEach(function(p){ p.classList.toggle('active', p.textContent.trim()===(m||'Toutes')); });
+  updateSwModels(); applyAllFilters();
+}
+function filterByPiece(piece) {
+  activePiece = piece;
+  document.querySelectorAll('#pieceFilter .pill').forEach(function(p){ p.classList.toggle('active', p.textContent.trim()===(piece||'Tous')); });
+  applyAllFilters();
+}
+function sortProducts(v){ sortMode=v; applyAllFilters(); }
+
+function onCatSearch() {
+  catSearchText = document.getElementById('catSearchInput').value;
+  document.getElementById('catClearBtn').classList.toggle('show',catSearchText.length>0);
+  document.getElementById('searchInput').value = catSearchText;
+  document.getElementById('clearBtn').classList.toggle('show',catSearchText.length>0);
+  applyAllFilters();
+}
+function clearCatSearch() {
+  catSearchText=''; document.getElementById('catSearchInput').value='';
+  document.getElementById('catClearBtn').classList.remove('show');
+  document.getElementById('searchInput').value=''; document.getElementById('clearBtn').classList.remove('show');
+  applyAllFilters();
+}
+function clearSearch() {
+  catSearchText=''; document.getElementById('searchInput').value=''; document.getElementById('clearBtn').classList.remove('show');
+  document.getElementById('catSearchInput').value=''; document.getElementById('catClearBtn').classList.remove('show');
+  applyAllFilters(); showPage('catalogue');
+}
+function resetAllFilters() {
+  catSearchText=''; activeMarque=''; activePiece='';
+  document.getElementById('catSearchInput').value=''; document.getElementById('searchInput').value='';
+  document.getElementById('clearBtn').classList.remove('show'); document.getElementById('catClearBtn').classList.remove('show');
+  document.getElementById('etatFilter').value=''; sortMode='default';
+  document.querySelectorAll('#marqueFilter .pill').forEach(function(p,i){p.classList.toggle('active',i===0);});
+  document.querySelectorAll('#pieceFilter .pill').forEach(function(p,i){p.classList.toggle('active',i===0);});
+  applyAllFilters();
+}
+document.getElementById('searchInput').addEventListener('input',function(){
+  catSearchText=this.value;
+  document.getElementById('clearBtn').classList.toggle('show',catSearchText.length>0);
+  document.getElementById('catSearchInput').value=catSearchText;
+  document.getElementById('catClearBtn').classList.toggle('show',catSearchText.length>0);
+  if(catSearchText.length>0) showPage('catalogue');
+  applyAllFilters();
+});
+
+function updateSwModels() {
+  var brand = document.getElementById('sw-brand').value;
+  var modeles = [];
+  allPieces.forEach(function(p){ if((!brand||p.marque===brand)&&p.modele&&modeles.indexOf(p.modele)===-1) modeles.push(p.modele); });
+  modeles.sort();
+  document.getElementById('sw-model').innerHTML = '<option value="">-- Tous les modèles --</option>'+
+    modeles.map(function(m){return '<option value="'+m+'">'+m+'</option>';}).join('');
+}
+function searchVehicle() {
+  var brand=document.getElementById('sw-brand').value, model=document.getElementById('sw-model').value, piece=document.getElementById('sw-piece').value;
+  activeMarque=brand; activePiece=piece; catSearchText=model;
+  document.getElementById('catSearchInput').value=model; document.getElementById('searchInput').value=model;
+  showPage('catalogue'); applyAllFilters();
+  var msg=[brand,model,piece].filter(Boolean).join(' · ');
+  if(msg) showToast('Recherche : '+msg);
+}
+
+/* ================================================
+   RENDU GRILLE
+================================================ */
+function renderGrid(items, gridId, countId, pagId, paginate) {
+  var grid = document.getElementById(gridId);
+  var countEl = document.getElementById(countId);
+  if (countEl) countEl.innerHTML='<strong>'+items.length+'</strong> pièce'+(items.length>1?'s':'');
+  var pageItems = items;
+  if (paginate) {
+    var tp=Math.ceil(items.length/ITEMS_PER_PAGE)||1;
+    if(currentPage>tp) currentPage=1;
+    pageItems=items.slice((currentPage-1)*ITEMS_PER_PAGE, currentPage*ITEMS_PER_PAGE);
+  }
+  if (!pageItems.length) {
+    grid.innerHTML='<div class="empty-state"><i class="fas fa-search"></i><p>Aucune pièce trouvée</p><small>Essayez de modifier votre recherche ou de changer de filtre</small></div>';
+    if(pagId) document.getElementById(pagId).innerHTML='';
+    return;
+  }
+  grid.innerHTML = pageItems.map(renderCard).join('');
+  /* Après rendu, tester les photos en async et mettre à jour les cartes */
+  pageItems.forEach(function(p){ loadCardPhotos(p); });
+  if(paginate&&pagId) renderPagination(pagId, items.length);
+}
+
+/* Rendu initial d'une carte (placeholder) */
+function renderCard(p) {
+  var badge = p.etat ? '<span class="pc-badge '+etatClass(p.etat)+'">'+etatIcon(p.etat)+' '+esc(p.etat)+'</span>' : '';
+  var prix = p.prix_clean !== null
+    ? '<div class="pc-prix">'+p.prix_clean.toLocaleString('fr-MA')+' <sup style="font-size:11px;font-family:Inter;font-weight:700">MAD</sup></div>'
+    : '<div class="pc-prix prix-demande">Prix sur demande</div>';
+  var waMsg = encodeURIComponent('Bonjour, je suis intéressé par la pièce '+p.ref+' - '+p.marque+' '+p.modele+' '+p.piece+'. Pouvez-vous confirmer le prix et la disponibilité ?');
+  var safeRef = p.ref.replace(/[^a-zA-Z0-9]/g,'_');
+
+  return '<div class="pc" id="card-'+safeRef+'">'+
+    '<div class="pc-img-box" id="imgbox-'+safeRef+'">'+
+      /* Placeholder par défaut, sera remplacé si photos trouvées */
+      '<div class="pc-img-placeholder" id="ph-'+safeRef+'"><div class="ico">'+getPieceIcon(p.piece)+'</div><div class="lbl">'+esc(p.marque)+'</div></div>'+
+      '<div class="pc-badge-wrap">'+badge+'</div>'+
+      '<span class="pc-photo-count" id="cnt-'+safeRef+'"></span>'+
+      '<a class="pc-wa-btn" href="https://wa.me/'+PHONE+'?text='+waMsg+'" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>'+
+    '</div>'+
+    '<div class="pc-body">'+
+      '<div class="pc-marque">'+esc(p.marque)+'</div>'+
+      '<div class="pc-nom">'+esc(p.modele)+(p.piece?' · '+esc(p.piece):'')+'</div>'+
+      '<div class="pc-ref">Réf: '+esc(p.ref)+'</div>'+
+      (p.anomalie?'<div class="pc-anomalie">'+esc(p.anomalie)+'</div>':'')+
+    '</div>'+
+    '<div style="padding:0 11px 11px">'+
+      '<div class="pc-footer">'+
+        prix+
+        '<button class="pc-add" id="add-'+safeRef+'" onclick="addToCart(\''+p.ref.replace(/\'/g,"\\'")+'\')"><i class="fas fa-plus"></i> Ajouter</button>'+
+      '</div>'+
+    '</div>'+
+  '</div>';
+}
+
+/* Chargement async des photos et mise à jour de la carte */
+function loadCardPhotos(p) {
+  var safeRef = p.ref.replace(/[^a-zA-Z0-9]/g,'_');
+  getValidPhotos(p.ref, p.photos).then(function(validPhotos) {
+    if (!validPhotos.length) return; /* Pas de photos → on garde le placeholder */
+    var imgbox = document.getElementById('imgbox-'+safeRef);
+    if (!imgbox) return;
+
+    /* Construire le carousel */
+    var slides = validPhotos.map(function(src, i) {
+      return '<div class="pc-slide">'+
+        '<img src="'+src+'" alt="Photo '+(i+1)+'" loading="lazy" onclick="openLightbox(\''+p.ref.replace(/\'/g,"\\'")+'\','+i+')">'+
+      '</div>';
+    }).join('');
+
+    var dots = validPhotos.length > 1
+      ? validPhotos.map(function(_,i){ return '<button class="pc-dot'+(i===0?' active':'')+'" onclick="carouselGo(\''+safeRef+'\','+i+')"></button>'; }).join('')
+      : '';
+
+    var prevBtn = validPhotos.length > 1 ? '<button class="pc-prev" onclick="carouselMove(\''+safeRef+'\',-1)"><i class="fas fa-chevron-left"></i></button>' : '';
+    var nextBtn = validPhotos.length > 1 ? '<button class="pc-next" onclick="carouselMove(\''+safeRef+'\',1)"><i class="fas fa-chevron-right"></i></button>' : '';
+
+    /* Remplacer le contenu de imgbox en gardant badges */
+    var badge = p.etat ? '<span class="pc-badge '+etatClass(p.etat)+'">'+etatIcon(p.etat)+' '+esc(p.etat)+'</span>' : '';
+    var waMsg = encodeURIComponent('Bonjour, je suis intéressé par la pièce '+p.ref+' - '+p.marque+' '+p.modele+' '+p.piece+'. Pouvez-vous confirmer le prix ?');
+
+    imgbox.innerHTML =
+      '<div class="pc-slides" id="slides-'+safeRef+'" data-idx="0" data-total="'+validPhotos.length+'">'+slides+'</div>'+
+      prevBtn+nextBtn+
+      (dots ? '<div class="pc-dots" id="dots-'+safeRef+'">'+dots+'</div>' : '')+
+      '<div class="pc-badge-wrap">'+badge+'</div>'+
+      (validPhotos.length>1 ? '<span class="pc-photo-count show">'+validPhotos.length+' 📷</span>' : '')+
+      '<a class="pc-wa-btn" href="https://wa.me/'+PHONE+'?text='+waMsg+'" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>';
+
+    /* Stocker les photos valides sur l'objet pièce pour la lightbox */
+    p._validPhotos = validPhotos;
+  });
+}
+
+/* ================================================
+   CAROUSEL
+================================================ */
+function carouselMove(safeRef, dir) {
+  var slides = document.getElementById('slides-'+safeRef);
+  if (!slides) return;
+  var idx = parseInt(slides.dataset.idx)||0;
+  var total = parseInt(slides.dataset.total)||1;
+  idx = (idx + dir + total) % total;
+  slides.style.transform = 'translateX(-'+idx*100+'%)';
+  slides.dataset.idx = idx;
+  updateDots(safeRef, idx, total);
+}
+function carouselGo(safeRef, idx) {
+  var slides = document.getElementById('slides-'+safeRef);
+  if (!slides) return;
+  var total = parseInt(slides.dataset.total)||1;
+  slides.style.transform = 'translateX(-'+idx*100+'%)';
+  slides.dataset.idx = idx;
+  updateDots(safeRef, idx, total);
+}
+function updateDots(safeRef, idx, total) {
+  var dotsEl = document.getElementById('dots-'+safeRef);
+  if (!dotsEl) return;
+  dotsEl.querySelectorAll('.pc-dot').forEach(function(d,i){ d.classList.toggle('active', i===idx); });
+}
+
+/* ================================================
+   LIGHTBOX
+================================================ */
+function openLightbox(ref, startIdx) {
+  var p = allPieces.find(function(x){ return x.ref===ref; });
+  if (!p || !p._validPhotos || !p._validPhotos.length) return;
+  lbPiece = p;
+  lbCurrent = startIdx || 0;
+  lbLoaded = p._validPhotos;
+  document.getElementById('lbInfo').textContent = p.marque+' '+p.modele+(p.piece?' · '+p.piece:'');
+  document.getElementById('lbRef').textContent = 'Réf: '+p.ref;
+  lbRender();
+  document.getElementById('lightbox').classList.add('open');
+  document.body.style.overflow='hidden';
+}
+function lbRender() {
+  document.getElementById('lbImg').src = lbLoaded[lbCurrent];
+  document.getElementById('lbCounter').textContent = (lbCurrent+1)+' / '+lbLoaded.length;
+  document.getElementById('lbPrev').disabled = (lbCurrent===0);
+  document.getElementById('lbNext').disabled = (lbCurrent===lbLoaded.length-1);
+  var dots = lbLoaded.map(function(_,i){
+    return '<button class="lb-dot'+(i===lbCurrent?' active':'')+'" onclick="lbGo('+i+')"></button>';
+  }).join('');
+  document.getElementById('lbDots').innerHTML = dots;
+}
+function lbMove(dir) { lbCurrent = Math.max(0,Math.min(lbLoaded.length-1,lbCurrent+dir)); lbRender(); }
+function lbGo(i) { lbCurrent=i; lbRender(); }
+function closeLightboxBtn() { document.getElementById('lightbox').classList.remove('open'); document.body.style.overflow=''; }
+function closeLightbox(e) { if(e.target===document.getElementById('lightbox')) closeLightboxBtn(); }
+document.addEventListener('keydown',function(e){
+  if(!document.getElementById('lightbox').classList.contains('open')) return;
+  if(e.key==='Escape') closeLightboxBtn();
+  if(e.key==='ArrowLeft') lbMove(-1);
+  if(e.key==='ArrowRight') lbMove(1);
+});
+
+/* ================================================
+   PAGINATION
+================================================ */
+function renderPagination(pagId, total) {
+  var pg=document.getElementById(pagId); if(!pg) return;
+  var tp=Math.ceil(total/ITEMS_PER_PAGE)||1;
+  if(tp<=1){pg.innerHTML='';return;}
+  var h='<button class="pag-btn" onclick="goPage('+(currentPage-1)+')" '+(currentPage===1?'disabled':'')+'>'+
+    '<i class="fas fa-chevron-left"></i></button>';
+  var s=Math.max(1,currentPage-2),e=Math.min(tp,currentPage+2);
+  if(s>1){h+='<button class="pag-btn" onclick="goPage(1)">1</button>';if(s>2)h+='<span class="pag-dots">…</span>';}
+  for(var i=s;i<=e;i++) h+='<button class="pag-btn'+(i===currentPage?' active':'')+'" onclick="goPage('+i+')">'+i+'</button>';
+  if(e<tp){if(e<tp-1)h+='<span class="pag-dots">…</span>';h+='<button class="pag-btn" onclick="goPage('+tp+')">'+tp+'</button>';}
+  h+='<button class="pag-btn" onclick="goPage('+(currentPage+1)+')" '+(currentPage===tp?'disabled':'')+'>'+
+    '<i class="fas fa-chevron-right"></i></button>';
+  h+='<span class="pag-info">Page '+currentPage+'/'+tp+'</span>';
+  pg.innerHTML=h;
+}
+function goPage(p) {
+  var tp=Math.ceil(filtered.length/ITEMS_PER_PAGE)||1;
+  if(p<1||p>tp) return;
+  currentPage=p;
+  renderGrid(filtered,'productsGrid','resultCount','pagination',true);
+  document.getElementById('page-catalogue').scrollIntoView({behavior:'smooth',block:'start'});
+}
+
+function renderHome() { renderGrid(allPieces.slice(0,8),'homeGrid',null,null,false); }
+
+/* ================================================
+   PANIER
+================================================ */
+function addToCart(ref) {
+  var p=allPieces.find(function(x){return x.ref===ref;});
+  if(!p) return;
+  var ex=cart.find(function(x){return x.ref===ref;});
+  if(ex){ex.qty++;}else{
+    cart.push({ref:p.ref,nom:p.marque+' '+p.modele+(p.piece?' - '+p.piece:''),prix:p.prix_clean,photo:(p._validPhotos&&p._validPhotos[0])||'',qty:1});
+  }
+  updateCartUI();
+  showToast(p.marque+' '+p.modele+' ajouté au panier !');
+  var btn=document.getElementById('add-'+ref.replace(/[^a-zA-Z0-9]/g,'_'));
+  if(btn){btn.classList.add('added');btn.innerHTML='<i class="fas fa-check"></i> Ajouté !';setTimeout(function(){btn.classList.remove('added');btn.innerHTML='<i class="fas fa-plus"></i> Ajouter';},2000);}
+}
+function changeQty(ref,d){var it=cart.find(function(x){return x.ref===ref;});if(!it)return;it.qty+=d;if(it.qty<=0)cart=cart.filter(function(x){return x.ref!==ref;});updateCartUI();}
+function removeItem(ref){cart=cart.filter(function(x){return x.ref!==ref;});updateCartUI();}
+function updateCartUI() {
+  var total=cart.reduce(function(s,i){return s+(i.prix||0)*i.qty;},0);
+  var count=cart.reduce(function(s,i){return s+i.qty;},0);
+  document.getElementById('totalVal').textContent=total>0?total.toLocaleString('fr-MA')+' MAD':'0 MAD';
+  document.getElementById('subtotalVal').textContent=total>0?total.toLocaleString('fr-MA')+' MAD':'—';
+  document.getElementById('headerTotal').textContent=total>0?total.toLocaleString('fr-MA')+' MAD':'0 MAD';
+  var badge=document.getElementById('cartBadge');badge.textContent=count;badge.classList.toggle('show',count>0);
+  var c=document.getElementById('cartItems');
+  if(!cart.length){c.innerHTML='<div class="cp-empty"><i class="fas fa-box-open"></i><p>Votre panier est vide</p><small>Ajoutez des pièces depuis le catalogue</small></div>';return;}
+  c.innerHTML=cart.map(function(it){
+    var ico=(it.photo&&it.photo.trim())?'<img src="'+it.photo+'" alt="" style="width:100%;height:100%;object-fit:cover">':'🔧';
+    var ps=it.prix?(it.prix*it.qty).toLocaleString('fr-MA')+' MAD':'Sur demande';
+    return '<div class="cp-item"><div class="cp-ico">'+ico+'</div><div style="flex:1">'+
+      '<div class="cp-name">'+esc(it.nom)+'</div><div class="cp-ref">Réf: '+esc(it.ref)+'</div>'+
+      '<div class="cp-ctrl"><button class="qb" onclick="changeQty(\''+it.ref+'\', -1)"><i class="fas fa-minus"></i></button>'+
+      '<span class="qn">'+it.qty+'</span><button class="qb" onclick="changeQty(\''+it.ref+'\', 1)"><i class="fas fa-plus"></i></button>'+
+      '<span style="font-size:10.5px;color:var(--text3);margin-left:5px">'+ps+'</span></div>'+
+      '</div><button class="cdel" onclick="removeItem(\''+it.ref+'\')"><i class="fas fa-trash"></i></button></div>';
+  }).join('');
+}
+function toggleCart(){document.getElementById('cartPanel').classList.toggle('open');document.getElementById('cartOverlay').classList.toggle('open');document.body.style.overflow=document.getElementById('cartPanel').classList.contains('open')?'hidden':'';}
+function buildMsg(){
+  if(!cart.length) return 'Bonjour EL KANDAOUI AUTO KIT, je voudrais passer une commande.';
+  var lines=cart.map(function(i){return '- '+i.nom+' (Réf: '+i.ref+') x'+i.qty+(i.prix?' = '+(i.prix*i.qty).toLocaleString('fr-MA')+' MAD':'');});
+  return '*Commande EL KANDAOUI AUTO KIT:*\n'+lines.join('\n')+'\n\n_Merci de confirmer disponibilité et prix._';
+}
+function orderWhatsApp(){window.open('https://wa.me/'+PHONE+'?text='+encodeURIComponent(buildMsg()),'_blank');}
+function orderSMS(){window.open('sms:+'+PHONE+'?body='+encodeURIComponent(buildMsg()));}
+
+/* ================================================
+   FORMULAIRE COMMANDE
+================================================ */
+function sendWhatsApp(){
+  var fn=document.getElementById('fname').value,ph=document.getElementById('phone').value,pt=document.getElementById('parts').value;
+  if(!fn||!ph||!pt){showToast('⚠️ Remplissez prénom, téléphone et pièces');return;}
+  var ln=document.getElementById('lname').value,ct=document.getElementById('city').value,car=document.getElementById('car').value;
+  var msg='*Bonjour EL KANDAOUI AUTO KIT!*\n\n👤 *Client:* '+fn+' '+ln+'\n📞 *Tél:* '+ph+'\n📍 *Ville:* '+ct+'\n🚗 *Véhicule:* '+car+'\n🔧 *Pièces:* '+pt;
+  window.open('https://wa.me/'+PHONE+'?text='+encodeURIComponent(msg),'_blank');
+}
+function sendSMS(){
+  var fn=document.getElementById('fname').value,ph=document.getElementById('phone').value,pt=document.getElementById('parts').value;
+  window.open('sms:+'+PHONE+'?body='+encodeURIComponent('Commande EL KANDAOUI AUTO KIT - '+fn+' ('+ph+'): '+pt));
+}
+
+/* ================================================
+   NAVIGATION
+================================================ */
+function showPage(name){
+  document.querySelectorAll('.page').forEach(function(p){p.classList.remove('active');});
+  document.getElementById('page-'+name).classList.add('active');
+  document.querySelectorAll('.nav-link').forEach(function(l){l.classList.remove('active');});
+  var nl=document.getElementById('nav-'+name);if(nl)nl.classList.add('active');
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+function toggleFaq(el){el.classList.toggle('open');el.nextElementSibling.classList.toggle('open');}
+function showToast(msg){
+  var t=document.getElementById('toast');document.getElementById('toastMsg').textContent=msg;
+  t.classList.add('show');clearTimeout(window._tt);window._tt=setTimeout(function(){t.classList.remove('show');},3200);
+}
+window.addEventListener('scroll',function(){document.getElementById('scrollTop').classList.toggle('show',window.scrollY>400);});
+
+/* ================================================
+   DÉMARRAGE
+================================================ */
+init();
+</script>
+</body>
+</html>
